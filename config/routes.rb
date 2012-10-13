@@ -5,10 +5,10 @@ Codeage::Application.routes.draw do
 
   devise_for :users
 
-  resources :user, :only => [] do
+  resource :user, :only => [] do
     collection do 
-      get :profile
       get :force_earn
+      get :poll_achievements
     end
   end
 

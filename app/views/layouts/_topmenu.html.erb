@@ -4,7 +4,7 @@
       <a href="/" class="brand">CodeAge</a>
       <div class="navbar-content">
         <ul class="nav">
-          <li class="<%= 'active' if current_page? root_path %>">
+          <li>
             <%= link_to "About", root_path %>
           </li>
         </ul>
@@ -15,13 +15,12 @@
           <% end %>
 
           <%= link_to user_path(:username => current_user.nickname), :class => "topusername badge badge-info pull-right" do %>
-              <span class="icon icon-user">
-              </span>
+              <span class="icon icon-user"></span>
               <span>
                 <%= current_user.nickname %>
               </span>
           <% end %>
-      <% else %>
+        <% else %>
           <a class="btn pull-right" href="/settings/auth/github">Login with GitHub</a>
         <% end %>
       </div>

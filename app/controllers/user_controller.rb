@@ -3,24 +3,25 @@ class UserController < ApplicationController
   before_filter :authenticate_user!, :only => [:profile, :force_earn]
 
   def profile
-
   end
 
   def public
     username = request.params[:username]
-    @user = User.find_by_nickname username
-    if !@user
-      raise ActiveRecord::RecordNotFound
-    end
+    @user = User.find_by_nickname! username
   end
 
   def force_earn
-    current_user.earn_achievements
+    current_user.async_earn_achievements
+    render :json => {last_at: current_user.achievements_fetched_at};
+  end
 
-    a = Achievement::ForeverAlone.new
-    a.got_it = true
-    a.user = current_user
+  def poll_achievements
+    last_at = params[:last_at]
 
-    render :partial => 'user/achievements', :locals => {user: current_user}
+    if current_user.achievements_fetched_at > last_at
+      render :partial => 'user/achievements', :locals => {user: current_user}
+    else
+      render :text => '';
+    end
   end
 end
