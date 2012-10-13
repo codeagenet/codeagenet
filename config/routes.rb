@@ -5,14 +5,14 @@ Codeage::Application.routes.draw do
 
   devise_for :users
 
-  resource :user, :only => [] do
+  resources :user, :only => [] do
     collection do 
       get :force_earn
       get :poll_achievements
     end
   end
 
-  namespace :settings do
+  scope 'settings' do
     match '/auth/:provider/callback' => 'authentications#create'
     match '/auth' => 'authentications#create', as: :authorization
     match '/noemail' => 'main#noemail', as: :noemail

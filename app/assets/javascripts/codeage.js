@@ -8,14 +8,14 @@ $(function () {
             this.achievements_cont = $('#achievements_container');
             this.achievements_cont.append(this.spinner);
             console.log('forcing earn');
-            $.get(Routes.user_force_earn_path(), {}, function ( data ) {
+            $.get(Routes.force_earn_user_index_path(), {}, function ( data ) {
                 that.ap_last_at = data.last_at;
                 callback( data );
             })
         }
         this.poll_achievements = function () {
             that.ap_interval = setInterval(function () {
-                $.get(Routes.user_poll_achievements_path(), {last_at : that.ap_last_at}, that.fetch_achievements);
+                $.get(Routes.poll_achievements_user_index_path(), {last_at : that.ap_last_at}, that.fetch_achievements);
             } , 1000);
         }
         this.fetch_achievements = function ( data ) {
