@@ -16,6 +16,7 @@ class AuthenticationsController < ApplicationController
 
   def authenticate! authentication, auth
     if authentication
+      authentication.update_attribute(:token, auth['credentials']['token'])
       flash[:notice] = "Signed in successfully"
       authentication.user.async_earn_achievements if authentication.user.achievements_fetched_at.nil?
       sign_in_and_redirect(:user, authentication.user)
