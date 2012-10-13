@@ -31,3 +31,17 @@ h2 {
 .page > * > * {
              padding: 0 15px;
 }
+
+.user {
+  .name {
+    margin-bottom:0;
+  }
+
+  .nickname{
+    margin-top: -10px;
+  }
+
+  .gravatar {
+    margin: 10px 0;
+  }
+}
