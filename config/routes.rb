@@ -1,7 +1,7 @@
 require 'resque/server'
 
 Codeage::Application.routes.draw do
-  get "user/profile"
+  get "user/profile", 'user/force_earn'
 
   devise_for :users
   match '/auth/:provider/callback' => 'authentications#create'
