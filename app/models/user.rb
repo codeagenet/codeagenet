@@ -53,7 +53,13 @@ class User < ActiveRecord::Base
     end
 
     self.achievements.reload if earned
+    self.achievements_fetched_at = Time.now
+    self.save!
 
     earned
+  end
+
+  def async_earn_achievements
+    Resque.enqueue(UserAchievements, self.id)
   end
 end
