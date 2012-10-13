@@ -10,6 +10,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'oauth2'
 gem 'omniauth-github'
+gem 'unicorn'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -27,6 +28,7 @@ group :development, :test do
   #fabrications
   gem 'ffaker'
   gem 'fabrication'
+  gem 'thin'
 
   #debugger
   gem 'pry'
