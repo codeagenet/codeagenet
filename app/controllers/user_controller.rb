@@ -20,12 +20,9 @@ class UserController < ApplicationController
   end
 
   def poll_achievements
-    last_at = params[:last_at]
+    last_at = Time.parse( params[:last_at] )
 
-    #render :text => current_user.achievements_fetched_at.to_s + " " + last_at.to_s;
-    #return;
-
-    if current_user.achievements_fetched_at > last_at
+    if current_user.achievements_fetched_at.to_i > last_at.to_i
       render :partial => 'user/achievements', :locals => {user: current_user}
     else
       render :text => '';
