@@ -3,6 +3,10 @@ class AuthenticationsController < ApplicationController
   def create
     auth = request.env['omniauth.auth']
 
+    if auth['info']['email'].blank?
+      redirect_to noemail_url
+    end
+
     authentication = Authentication.find_by_provider_and_uid(auth['provider'], auth['uid'])
 
     if authentication
