@@ -15,3 +15,10 @@ set :keep_releases, 5
 
 set :application, "codeage"
 set :repository,  "git@github.com:railsrumble/r12-team-479.git"
+
+require "capistrano-resque"
+
+role :resque_worker, "realtime"
+role :resque_scheduler, "cron"
+
+set :workers, { "realtime" => 2, "realtime cron" => 2 }
