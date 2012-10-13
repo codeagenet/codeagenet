@@ -28,6 +28,4 @@ class UserController < ApplicationController
       render :text => '';
     end
   end
-
-
 end
