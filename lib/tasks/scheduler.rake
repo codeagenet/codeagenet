@@ -18,6 +18,7 @@ namespace :resque do
     # schedule changes and applies them on the fly.
     # Note: This feature is only available in >=2.0.0.
     #Resque::Scheduler.dynamic = true
+    Resque.before_fork = Proc.new { ActiveRecord::Base.establish_connection }
 
     # The schedule doesn't need to be stored in a YAML, it just needs to
     # be a hash.  YAML is usually the easiest.

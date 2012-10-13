@@ -17,6 +17,7 @@ class AuthenticationsController < ApplicationController
   def authenticate! authentication, auth
     if authentication
       flash[:notice] = "Signed in successfully"
+      authentication.user.async_earn_achievements if authentication.user.achievements_fetched_at.nil?
       sign_in_and_redirect(:user, authentication.user)
     else
       user = User.new
@@ -31,5 +32,4 @@ class AuthenticationsController < ApplicationController
       end
     end
   end
-
 end
