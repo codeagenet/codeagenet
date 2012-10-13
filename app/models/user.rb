@@ -30,4 +30,16 @@ class User < ActiveRecord::Base
 
     list
   end
+
+  def earn_achievements
+    earned = []
+
+    unearned_achievements.each do |achievement|
+      earned.push achievement.create!(:user => self, :got_it => true) if achievement.check(self)
+    end
+
+    self.achievements.reload if earned
+
+    earned
+  end
 end

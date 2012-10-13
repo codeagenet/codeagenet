@@ -11,9 +11,5 @@ class Achievement < ActiveRecord::Base
     def list
       [Achievement::ForeverAlone, Achievement::PublicPerson]
     end
-
-    def check(user)
-      raise NotImplementedError
-    end
   end
 end
