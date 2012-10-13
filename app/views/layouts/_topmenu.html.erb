@@ -4,31 +4,25 @@
       <a href="/" class="brand">CodeAge</a>
       <div class="navbar-content">
         <ul class="nav">
-          <% if current_user %>
-              <li class="<%= 'active' if params[:action] == 'profile' %>">
-                <a href="/profile" class="<% %>">Profile</a>
-              </li>
-          <% end %>
-          <li class="<%= 'active' if params[:action] == 'about' %>">
-            <a href="/about">About</a>
+          <li class="<%= 'active' if current_page? root_path %>">
+            <%= link_to "About", root_path %>
           </li>
         </ul>
-        <% if current_user %>
 
+        <% if user_signed_in? %>
           <%= link_to destroy_user_session_path, class: 'btn pull-right', method: :delete do %>
             Logout<span class="icon icon-off"></span>
           <% end %>
 
-          <a class="topusername badge badge-info pull-right" href="<%= url_for :action => 'public', :controller => 'user', :username => current_user.nickname %>">
+          <%= link_to user_path(:username => current_user.nickname), :class => "topusername badge badge-info pull-right" do %>
               <span class="icon icon-user">
               </span>
               <span>
                 <%= current_user.nickname %>
               </span>
-          </a>
-
+          <% end %>
       <% else %>
-          <a class="btn pull-right" href="/auth/github">Login with GitHub</a>
+          <a class="btn pull-right" href="/settings/auth/github">Login with GitHub</a>
         <% end %>
       </div>
     </div>

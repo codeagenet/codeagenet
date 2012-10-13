@@ -1,18 +1,24 @@
 require 'resque/server'
 
 Codeage::Application.routes.draw do
-  get "user/profile", 'user/force_earn'
+  mount Resque::Server.new, :at => "/settings/resque"
 
   devise_for :users
-  match '/auth/:provider/callback' => 'authentications#create'
-  match '/auth' => 'authentications#create', as: :authorization
-  match '/about' => 'main#about'
-  match '/noemail' => 'main#noemail', as: :noemail
-  match '/profile' => 'user#profile'
 
-  match '/public/:username' => 'user#public'
+  resources :user, :only => [] do
+    collection do 
+      get :profile
+      get :force_earn
+    end
+  end
 
-  mount Resque::Server.new, :at => "/resque"
+  namespace :settings do
+    match '/auth/:provider/callback' => 'authentications#create'
+    match '/auth' => 'authentications#create', as: :authorization
+    match '/noemail' => 'main#noemail', as: :noemail
+  end
 
   root :to => 'main#index'
+
+  match ':username' => 'user#public', as: :user
 end
