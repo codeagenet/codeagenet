@@ -42,7 +42,7 @@ group :development, :test do
   gem 'thin'
 
   #debugger
-  gem 'pry'
+  gem 'pry', :group => :tddium_ignore
   gem 'pry-nav'
 
 	gem 'rspec-rails'
