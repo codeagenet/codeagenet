@@ -11,7 +11,10 @@ class User < ActiveRecord::Base
 
   # Auth
   def apply_omniauth auth
-    self.email = auth['extra']['raw_info']['email']
+    self.gravatar = auth['info']['image']
+    self.nickname = auth['info']['nickname']
+    self.name = auth['info']['name']
+    self.email = auth['info']['email']
     authentications.build(provider: auth['provider'], uid: auth['uid'], token: auth['credentials']['token'])
   end
 

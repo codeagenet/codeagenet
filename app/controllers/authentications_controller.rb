@@ -7,11 +7,18 @@ class AuthenticationsController < ApplicationController
 
     if authentication
       flash[:notice] = "Signed in successfully"
-      sing_in_and_redirect(:user, authentication.user)
+      sign_in_and_redirect(:user, authentication.user)
     else
-
+      user = User.new
+      user.apply_omniauth(auth)
+      if user.save(validate: false)
+        flash[:notice] = "Account created and signed in successfully"
+        sign_in_and_redirect(:user, user)
+      else
+        flash[:error] = "Error while creating user account"
+        redirect_to root_url
+      end
     end
-    render json: auth.to_json
   end
 
 end
