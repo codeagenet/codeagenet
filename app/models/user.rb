@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
   end
 
   # Achievements related
-  has_many :achievements
+  has_many :achievements, :dependent => :delete_all
 
   def unearned_achievements
     list = Achievement.list
