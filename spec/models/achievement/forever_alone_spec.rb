@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Achievement::ForeverAlone do
   it "should be included in Achievement list" do
-    Achievement::LIST.should include Achievement::ForeverAlone
+    Achievement.list.should include Achievement::ForeverAlone
   end
 
   describe "check" do

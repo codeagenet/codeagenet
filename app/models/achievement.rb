@@ -3,9 +3,17 @@ class Achievement < ActiveRecord::Base
   belongs_to :user
   validates_presence_of :user
 
-  LIST = [Achievement::ForeverAlone]
+  def got_it?
+    got_it
+  end
 
-  def self.check(user)
-    raise NotImplementedError
+  class << self
+    def list
+      [Achievement::ForeverAlone]
+    end
+
+    def check(user)
+      raise NotImplementedError
+    end
   end
 end
