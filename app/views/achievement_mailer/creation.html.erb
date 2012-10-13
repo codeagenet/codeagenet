@@ -1,0 +1,12 @@
+Hello, <%= @user.name %>!
+
+<% if @achievements.count == 1 %>
+  You've just received new badge on Codeage:
+<% else %>
+  You've just received new badges on Codeage:
+<% end %>
+
+<% @achievements.each do |ach| %>
+  <h3><%= ach.class.title %></h3>
+  <p><%= ach.class.description %></p>
+<% end %>

@@ -58,6 +58,14 @@ describe User do
 
         user.achievements_fetched_at.to_i.should be_within(5).of(Time.now.to_i)
       end
+
+      it "should send letters" do
+        Achievement.list.each {|ac| ac.should_receive(:check).with(user).and_return(false)}
+
+        AchievementMailer.stub_chain :creation, :deliver
+
+        user.earn_achievements
+      end
     end
   end
 end
