@@ -56,7 +56,7 @@ class User < ActiveRecord::Base
       earned.push achievement.create!(:user => self, :got_it => true) if achievement.check(self)
     end
 
-    if earned
+    unless earned.empty?
       self.achievements.reload
       AchievementMailer.creation(self, earned).deliver
     end
