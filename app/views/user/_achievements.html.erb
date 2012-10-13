@@ -1,0 +1,11 @@
+<% if achievements.empty? %>
+      <p class="alert alert-error">
+        This user hasn't achieved anything yet.
+      </p>
+<% else %>
+<ul>
+<% achievements.each do |a| %>
+     <li><%= a.inspect %></li>
+<% end %>
+</ul>
+<% end %>
