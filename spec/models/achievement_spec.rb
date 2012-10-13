@@ -12,9 +12,5 @@ describe Achievement do
   	it "should raise error if achievement is called, not ancestor" do
       expect { Achievement.check(@user) }.to raise_error
     end
-
-    it "should have list of ancestors" do
-      Achievement::LIST.should be_a_kind_of Array
-    end
   end
 end
