@@ -50,6 +50,14 @@ describe User do
         res.first.class.should == Achievement::ForeverAlone
         res.first.user.should == user
       end
+
+      it "should mark datetime when done" do
+        Achievement.list.each {|ac| ac.should_receive(:check).with(user).and_return(false)}
+
+        user.earn_achievements
+
+        user.achievements_fetched_at.to_i.should be_within(5).of(Time.now.to_i)
+      end
     end
   end
 end

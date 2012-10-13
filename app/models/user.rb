@@ -23,8 +23,8 @@ class User < ActiveRecord::Base
   end
 
   # Github related
-  def github
-    api_token = self.token
+  def github(api_token = nil)
+    api_token = self.token if api_token.nil?
     @github ||= Github.new do |config|
       config.oauth_token = api_token
     end
@@ -53,7 +53,13 @@ class User < ActiveRecord::Base
     end
 
     self.achievements.reload if earned
+    self.achievements_fetched_at = Time.now
+    self.save!
 
     earned
+  end
+
+  def async_earn_achievements
+    Resque.enqueue(UserAchievements, self.id)
   end
 end
