@@ -10,5 +10,5 @@
 </div>
 <div class="span7">
   <h2><%= (@user.name.split ' ')[0] %>'s CodeAge Achievements</h2>
-  <%= render :partial => 'achievements', :locals => {achievements: @user.achievements} %>
+  <%= render :partial => 'achievements', :locals => {user: @user} %>
 </div>

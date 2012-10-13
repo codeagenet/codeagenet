@@ -14,10 +14,20 @@
           </li>
         </ul>
         <% if current_user %>
+
           <%= link_to destroy_user_session_path, class: 'btn pull-right', method: :delete do %>
-            Logout<span class="icon-off"></span>
+            Logout<span class="icon icon-off"></span>
           <% end %>
-        <% else %>
+
+          <a class="topusername badge badge-info pull-right" href="<%= url_for :action => 'public', :controller => 'user', :username => current_user.nickname %>">
+              <span class="icon icon-user">
+              </span>
+              <span>
+                <%= current_user.nickname %>
+              </span>
+          </a>
+
+      <% else %>
           <a class="btn pull-right" href="/auth/github">Login with GitHub</a>
         <% end %>
       </div>

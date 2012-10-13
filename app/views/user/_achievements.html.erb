@@ -1,11 +1,14 @@
-<% if achievements.empty? %>
+<% if user.achievements.empty? %>
       <p class="alert alert-error">
         This user hasn't achieved anything yet.
       </p>
 <% else %>
-<ul>
-<% achievements.each do |a| %>
-     <li><%= image_tag(a.class.image_path, :alt => a.class.title) %></li>
-<% end %>
-</ul>
+    <ul>
+    <% user.achievements.each do |a| %>
+         <li><%= image_tag(a.class.image_path, :alt => a.class.title) %></li>
+    <% end %>
+    </ul>
+    <i>
+      The list was updated at <%= l user.achievements_fetched_at, :format => :long %>
+    </i>
 <% end %>

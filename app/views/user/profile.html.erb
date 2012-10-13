@@ -11,6 +11,6 @@
 <div class="span7">
   <h2>Your CodeAge Achievements</h2>
   <p>
-    <%= render :partial => 'achievements', :locals => {achievements: current_user.achievements} %>
+    <%= render :partial => 'achievements', :locals => {user: current_user} %>
   </p>
 </div>
