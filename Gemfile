@@ -14,6 +14,7 @@ gem 'omniauth-github'
 gem 'resque'
 gem 'resque-scheduler', :require => 'resque_scheduler'
 
+gem 'simple-rails-deploy'
 gem 'unicorn'
 
 gem 'twitter-bootstrap-rails'
@@ -47,6 +48,4 @@ group :development, :test do
   gem 'letter_opener'
   #cleaner dev server log
   gem 'quiet_assets'
-
-  gem 'simple-rails-deploy'
 end
