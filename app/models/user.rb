@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   has_many :authentications, :dependent => :delete_all
 
+  def to_s
+    name || nickname || email
+  end
+
   # Auth
   def apply_omniauth auth
     self.gravatar = auth['info']['image']

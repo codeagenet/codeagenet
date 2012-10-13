@@ -49,4 +49,5 @@ Codeage::Application.configure do
   config.github_app_secret = '1bb8b59f78f4f8d7b557e4798292387362c24943'
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.delivery_method = :letter_opener  
 end
