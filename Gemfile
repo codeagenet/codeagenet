@@ -32,6 +32,7 @@ group :development, :test do
   #fabrications
   gem 'ffaker'
   gem 'fabrication'
+  gem 'thin'
 
   #debugger
   gem 'pry'
