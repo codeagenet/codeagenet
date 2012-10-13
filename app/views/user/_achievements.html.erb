@@ -1,14 +1,21 @@
-<% if user.achievements.empty? %>
-      <p class="alert alert-error">
-        This user hasn't achieved anything yet.
-      </p>
-<% else %>
-    <ul>
-    <% user.achievements.each do |a| %>
-         <li><%= image_tag(a.class.image_path, :alt => a.class.title) %></li>
+<div id="achievements_container">
+    <% if user.achievements.empty? %>
+          <p class="alert alert-error">
+            This user hasn't achieved anything yet.
+          </p>
+    <% else %>
+        <ul id="achievements_list">
+        <% user.achievements.each do |a| %>
+             <li><%= image_tag(a.class.image_path, :alt => a.class.title) %></li>
+        <% end %>
+        </ul>
     <% end %>
-    </ul>
-    <i>
-      The list was updated at <%= l user.achievements_fetched_at, :format => :long %>
-    </i>
-<% end %>
+    <% if me? user %>
+        <i>
+          Info was updated at <%= l user.achievements_fetched_at, :format => :long %>
+        </i>
+        <p>
+          <a class="btn btn-warning" id="force_earn">Update now!</a>
+        </p>
+    <% end %>
+</div>
