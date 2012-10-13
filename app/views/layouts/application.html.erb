@@ -8,7 +8,16 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="container">
+<%= render :partial => 'topmenu' %>
+
+  <div class="container">
+    <%= yield %>
+  </div>
+
+
+<%= render :partial => 'footer' %>
+</div>
 
 </body>
 </html>
