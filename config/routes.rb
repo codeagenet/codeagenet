@@ -3,5 +3,6 @@ Codeage::Application.routes.draw do
   match '/auth/:provider/callback' => 'authentications#create'
   match '/about' => 'main#about'
   match '/noemail' => 'main#noemail'
+  match '/profile' => 'main#profile'
   root :to => 'main#index'
 end
