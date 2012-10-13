@@ -1,6 +1,6 @@
 class Achievement::ForeverAlone < Achievement
   Title = 'Forever Alone'
-  ImagePath = 'achievements/forever_alone.jpg'
+  ImagePath = 'achievements/forever_alone.png'
   Description = 'User owns at least 10 repos(forks are not included) with 1 watcher or without watchers at all.'
 
   def self.check(user)
