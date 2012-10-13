@@ -1,11 +1,6 @@
 class AchievementMailer < ActionMailer::Base
   default from: "noreply@codeage.net"
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.achievement_mailer.creation.subject
-  #
   def creation(user, achievements)
     @achievements = achievements
     @user = user

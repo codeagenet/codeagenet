@@ -11,6 +11,7 @@ gem 'omniauth'
 gem 'oauth2'
 gem 'omniauth-github'
 gem "github_api"
+gem "js-routes"
 
 gem 'resque'
 gem 'resque-scheduler', :require => 'resque_scheduler'
