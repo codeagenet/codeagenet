@@ -5,7 +5,7 @@
 <% else %>
 <ul>
 <% achievements.each do |a| %>
-     <li><%= a.inspect %></li>
+     <li><%= image_tag(a.class.image_path, :alt => a.class.title) %></li>
 <% end %>
 </ul>
 <% end %>
