@@ -3,6 +3,7 @@ Codeage::Application.routes.draw do
 
   devise_for :users
   match '/auth/:provider/callback' => 'authentications#create'
+  match '/auth' => 'authentications#create', as: :authorization
   match '/about' => 'main#about'
   match '/noemail' => 'main#noemail', as: :noemail
   match '/profile' => 'user#profile'

@@ -17,8 +17,8 @@
     <h3>If you don't want to share your email with others, you always can provide us with it privately. We guarantee that
     it will never be put in public and transfered to third parties.</h3>
   </p>
-  <form class="form-search" action="">
-    <input  placeholder="Email" type="text" class="input-medium search-query" name="email">
-    <button type="submit" class="btn btn-success">Save email address</button>
-  </form>
+  <%= form_tag noemail_url do %>
+    <%= email_field_tag :email, nil, class: 'input-medium search-query', placeholder: 'Email' %>
+    <%= submit_tag 'Save email address', class: 'btn btn-success' %>
+  <% end %>
 </div>
