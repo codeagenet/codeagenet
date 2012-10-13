@@ -11,6 +11,9 @@ gem 'omniauth'
 gem 'oauth2'
 gem 'omniauth-github'
 
+gem 'resque'
+gem 'resque-scheduler', :require => 'resque_scheduler'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
