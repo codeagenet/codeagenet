@@ -52,6 +52,8 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
+    capistrano-resque (0.0.7)
+      capistrano
     capistrano_colors (0.5.5)
     coderay (1.0.8)
     coffee-rails (3.2.2)
@@ -261,6 +263,7 @@ PLATFORMS
 
 DEPENDENCIES
   accept_values_for
+  capistrano-resque
   coffee-rails (~> 3.2.1)
   devise
   fabrication

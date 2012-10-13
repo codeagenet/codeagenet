@@ -14,6 +14,7 @@ gem "github_api"
 
 gem 'resque'
 gem 'resque-scheduler', :require => 'resque_scheduler'
+gem 'capistrano-resque'
 
 gem 'simple-rails-deploy'
 gem 'unicorn'
