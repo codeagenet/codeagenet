@@ -2,24 +2,20 @@ $(function () {
 
     Codeage = function () {
         var that = this;
-        this.urls = {
-            force_earn : '/user/force_earn' ,
-            poll_achievements : '/user/poll_achievements'
-        }
 
         this.spinner = $('<span>').addClass('spinner')
         this.force_earn = function ( callback ) {
             this.achievements_cont = $('#achievements_container');
             this.achievements_cont.append(this.spinner);
             console.log('forcing earn');
-            $.get(this.urls.force_earn, {}, function ( data ) {
+            $.get(Routes.user_force_earn_path(), {}, function ( data ) {
                 that.ap_last_at = data.last_at;
                 callback( data );
             })
         }
         this.poll_achievements = function () {
             that.ap_interval = setInterval(function () {
-                $.get(that.urls.poll_achievements, {last_at : that.ap_last_at}, that.fetch_achievements);
+                $.get(Routes.user_poll_achievements_path(), {last_at : that.ap_last_at}, that.fetch_achievements);
             } , 1000);
         }
         this.fetch_achievements = function ( data ) {
