@@ -7,3 +7,16 @@
     margin-top: 40px;
     background: rgba(0,0,0,0.3)
 }
+
+h1 {
+    color: #87ca4d;
+    text-shadow: 2px 1px 1px rgba(0,0,0,0.5);
+}
+
+.navbar .brand {
+    color: #c67605;
+}
+
+.page > * > * {
+             padding: 0 15px;
+}
