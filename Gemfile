@@ -43,7 +43,7 @@ group :development, :test do
   gem 'pry-nav'
 
 	gem 'rspec-rails'
-  gem 'shoulda', :require => false
+  gem 'shoulda-matchers'
   gem 'accept_values_for'
 
   gem 'letter_opener'
