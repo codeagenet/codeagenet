@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Achievements::ForeverAlone do
-  it "should be included in Achievements list" do
-    Achievements::LIST.should include Achievements::ForeverAlone
+describe Achievement::ForeverAlone do
+  it "should be included in Achievement list" do
+    Achievement::LIST.should include Achievement::ForeverAlone
   end
 
   describe "check" do
@@ -12,12 +12,12 @@ describe Achievements::ForeverAlone do
 
     it "should call github and check there if positive" do
       Github.should_receive(:forever_alone?).and_return false
-      Achievements::ForeverAlone.check(@user).should be_false
+      Achievement::ForeverAlone.check(@user).should be_false
     end
 
     it "should call github and check there if negative" do
       Github.should_receive(:forever_alone?).and_return true
-      Achievements::ForeverAlone.check(@user).should be_true
+      Achievement::ForeverAlone.check(@user).should be_true
     end
   end
 end
