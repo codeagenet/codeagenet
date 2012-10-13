@@ -9,13 +9,6 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require bootswatch/loader
  *= require_tree .
  */
-
-.container {
-    background: rgba(255,255,255,0.01)
-}
-
-.footer {
-   background: rgba(0,0,0,0.3)
-}
