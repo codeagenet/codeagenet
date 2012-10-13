@@ -6,5 +6,8 @@ Codeage::Application.routes.draw do
   match '/about' => 'main#about'
   match '/noemail' => 'main#noemail', as: :noemail
   match '/profile' => 'user#profile'
+
+  match '/public/:username' => 'user#public'
+
   root :to => 'main#index'
 end
