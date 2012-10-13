@@ -1,6 +1,6 @@
 class Achievement::PublicPerson < Achievement
   Title = 'Public Person'
-  ImagePath = 'achievements/public_person.jpg'
+  ImagePath = 'achievements/public_person.png'
   Description = 'User has at least 10 unmutual followers.'
 
   def self.check(user)
