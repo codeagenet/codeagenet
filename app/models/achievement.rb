@@ -11,5 +11,17 @@ class Achievement < ActiveRecord::Base
     def list
       [Achievement::ForeverAlone, Achievement::PublicPerson]
     end
+
+    def image_path
+      self::ImagePath
+    end
+    
+    def title
+      self::Title
+    end
+
+    def description
+      self::Description
+    end
   end
 end
