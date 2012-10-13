@@ -4,4 +4,7 @@ class MainController < ApplicationController
 
   def about
   end
+
+  def profile
+  end
 end
