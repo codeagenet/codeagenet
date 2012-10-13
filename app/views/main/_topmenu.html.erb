@@ -4,16 +4,18 @@
       <a href="/" class="brand">CodeAge</a>
       <div class="navbar-content">
         <ul class="nav">
-          <li>
-            <a href="/profile" class="<% %>">Profile</a>
-          </li>
+          <% if current_user %>
+              <li class="<%= 'active' if params[:action] == 'profile' %>">
+                <a href="/profile" class="<% %>">Profile</a>
+              </li>
+          <% end %>
           <li class="<%= 'active' if params[:action] == 'about' %>">
             <a href="/about">About</a>
           </li>
         </ul>
           <% if current_user %>
             <a class="btn pull-right">
-              <span class="btn-label">Logout</span></span>
+              Logout<span class="icon-off"></span>
             </a>
           <% end %>
       </div>
