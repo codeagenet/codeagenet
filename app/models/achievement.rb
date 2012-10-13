@@ -9,7 +9,7 @@ class Achievement < ActiveRecord::Base
 
   class << self
     def list
-      [Achievement::ForeverAlone, Achievement::PublicPerson, Achievement::Forker, Achievement::Friendly, Achievement::Stalker, Achievement::Githubbie]
+      [Achievement::ForeverAlone, Achievement::PublicPerson, Achievement::Forker, Achievement::Friendly, Achievement::Stalker, Achievement::Githubbie, Achievement::Polyglot]
     end
 
     def image_path
