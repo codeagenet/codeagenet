@@ -3,8 +3,6 @@ class Achievement < ActiveRecord::Base
   belongs_to :user
   validates_presence_of :user
 
-  LIST = []
-
   def self.check(user)
     raise NotImplementedError
   end
