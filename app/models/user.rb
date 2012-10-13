@@ -23,8 +23,8 @@ class User < ActiveRecord::Base
   end
 
   # Github related
-  def github
-    api_token = self.token
+  def github(api_token = nil)
+    api_token = self.token if api_token.nil?
     @github ||= Github.new do |config|
       config.oauth_token = api_token
     end

@@ -7,4 +7,7 @@ class MainController < ApplicationController
 
   def profile
   end
+
+  def noemail
+  end
 end
