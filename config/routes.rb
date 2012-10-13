@@ -1,3 +1,5 @@
+require 'resque/server'
+
 Codeage::Application.routes.draw do
   get "user/profile"
 
