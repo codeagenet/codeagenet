@@ -15,12 +15,22 @@ class UserController < ApplicationController
   end
 
   def force_earn
-    current_user.earn_achievements
-
-    a = Achievement::ForeverAlone.new
-    a.got_it = true
-    a.user = current_user
-
-    render :partial => 'user/achievements', :locals => {user: current_user}
+    current_user.async_earn_achievements
+    render :json => {last_at: current_user.achievements_fetched_at};
   end
+
+  def poll_achievements
+    last_at = params[:last_at]
+
+    #render :text => current_user.achievements_fetched_at.to_s + " " + last_at.to_s;
+    #return;
+
+    if current_user.achievements_fetched_at > last_at
+      render :partial => 'user/achievements', :locals => {user: current_user}
+    else
+      render :text => '';
+    end
+  end
+
+
 end
