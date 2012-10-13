@@ -18,6 +18,20 @@ class User < ActiveRecord::Base
     authentications.build(provider: auth['provider'], uid: auth['uid'], token: auth['credentials']['token'])
   end
 
+  def token
+    authentications.last.token
+  end
+
+  # Github related
+  def github
+    api_token = self.token
+    @github ||= Github.new do |config|
+      config.oauth_token = api_token
+    end
+
+    @github
+  end
+
   # Achievements related
   has_many :achievements
 

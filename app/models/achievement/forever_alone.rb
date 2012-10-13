@@ -1,5 +1,5 @@
 class Achievement::ForeverAlone < Achievement
   def self.check(user)
-    Github.forever_alone?
+    user.github.repos.all(type: 'owner').select { |repo| repo.fork == false && repo.watchers < 2 }.count > 10
   end
 end
