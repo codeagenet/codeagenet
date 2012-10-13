@@ -34,4 +34,14 @@ Codeage::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  config.assets.logger = false
+
+  # generators config
+  config.generators do |g|
+    g.assets      false
+    g.javascripts false
+    g.stylesheets false
+    g.test_framework = :rspec
+    g.fixture_replacement = :fabrication
+  end
 end
