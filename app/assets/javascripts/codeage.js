@@ -36,4 +36,9 @@ $(function () {
     $('#force_earn').live ('click', function () {
         codeage.force_earn(codeage.poll_achievements);
     })
+
+    /* common */
+    setTimeout(function () {
+        $('.flash').fadeOut(3000)
+    }, 2000);
 })

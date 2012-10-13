@@ -1,7 +1,7 @@
 <% if flash.any? %>
     <% [:notice, :error, :alert].each do |level| %>
         <% unless flash[level].blank? %>
-            <div class="alert alert-<%= flash_class(level) %>">
+            <div class="flash alert alert-<%= flash_class(level) %>">
               <a class="close" href="#" class="close" data-dismiss="alert">×</a>
               <%= content_tag :span, flash[level] %>
             </div>
