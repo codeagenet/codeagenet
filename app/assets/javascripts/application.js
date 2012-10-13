@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require bootswatch/loader
 //= require twitter/bootstrap
+//= require js-routes
 //= require_tree .
