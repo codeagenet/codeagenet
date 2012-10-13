@@ -13,11 +13,13 @@
             <a href="/about">About</a>
           </li>
         </ul>
-          <% if current_user %>
-            <a class="btn pull-right">
-              Logout<span class="icon-off"></span>
-            </a>
+        <% if current_user %>
+          <%= link_to destroy_user_session_path, class: 'btn pull-right', method: :delete do %>
+            Logout<span class="icon-off"></span>
           <% end %>
+        <% else %>
+          <a class="btn pull-right" href="/auth/github">Login with GitHub</a>
+        <% end %>
       </div>
     </div>
   </div>
