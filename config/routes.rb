@@ -10,5 +10,7 @@ Codeage::Application.routes.draw do
 
   match '/public/:username' => 'user#public'
 
+  mount Resque::Server.new, :at => "/resque"
+
   root :to => 'main#index'
 end
