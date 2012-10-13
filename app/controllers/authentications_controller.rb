@@ -23,6 +23,7 @@ class AuthenticationsController < ApplicationController
       user.apply_omniauth(auth)
       if user.save(validate: false)
         flash[:notice] = "Account created and signed in successfully"
+        user.async_earn_achievements unless user.achievements_fetched_at.nil?
         sign_in_and_redirect(:user, user)
       else
         flash[:error] = "Error while creating user account"
