@@ -1,3 +1,5 @@
+@import 'bootstrap.slate.css';
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -11,3 +13,11 @@
  *= require_self
  *= require_tree .
  */
+
+.container {
+    background: rgba(255,255,255,0.01)
+}
+
+.footer {
+   background: rgba(0,0,0,0.3)
+}

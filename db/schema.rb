@@ -11,13 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013111846) do
+ActiveRecord::Schema.define(:version => 20121013113248) do
 
   create_table "achievements", :force => true do |t|
     t.string   "type"
     t.integer  "counter"
     t.boolean  "got_it"
     t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "authentications", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "token"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
