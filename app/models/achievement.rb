@@ -9,7 +9,7 @@ class Achievement < ActiveRecord::Base
 
   class << self
     def list
-      [Achievement::ForeverAlone]
+      [Achievement::ForeverAlone, Achievement::PublicPerson]
     end
 
     def check(user)
