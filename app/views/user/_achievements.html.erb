@@ -5,7 +5,7 @@
       </p>
   <% else %>
     <p class="alert alert-info">
-      So far <%= (me? user) ? 'you' : 'user' %> have earned <%= pluralize(user.achievements.length, 'badge') %>
+      So far <%= (me? user) ? 'you have' : 'user has' %> earned <%= pluralize(user.achievements.length, 'badge') %>
     </p>
   <% end %>
 
