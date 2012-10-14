@@ -7,10 +7,8 @@ class Achievement::Railsrumbler < Achievement
       bottom: 105,
       orientation: :right
   };
-  Hidden = true
 
   def self.check(user)
     user.github.orgs.all.map { |org| org.login }.include? "railsrumble"
   end
-
 end

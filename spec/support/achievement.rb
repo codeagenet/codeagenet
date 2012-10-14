@@ -1,6 +1,6 @@
 shared_examples "achievement" do
   it "should be included in Achievement list" do
-    Achievement.list.should include described_class
+    (Achievement.list + Achievement.list_hidden).should include described_class
   end
 
   it "should respond to required methods" do

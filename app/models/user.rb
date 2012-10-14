@@ -39,8 +39,10 @@ class User < ActiveRecord::Base
   # Achievements related
   has_many :achievements, :dependent => :delete_all
 
-  def unearned_achievements
+  def unearned_achievements(include_hidden = false)
     list = Achievement.list
+
+    list += Achievement.list_hidden if include_hidden
 
     self.achievements.each do |a|
       list.delete(a.class)
@@ -52,7 +54,7 @@ class User < ActiveRecord::Base
   def earn_achievements
     earned = []
 
-    unearned_achievements.each do |achievement|
+    unearned_achievements(true).each do |achievement|
       a = achievement.earn_achievement_for(self)
 
       earned.push a if a
