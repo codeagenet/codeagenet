@@ -3,9 +3,9 @@ class Achievement::Railsrumbler < Achievement
   ImagePath = 'achievements/badge_rumbler.png'
   Description = 'Participates on Rails Rumble.'
   Bubble = {
-      right: 88,
-      bottom: 105,
-      orientation: :right
+      left: 71,
+      bottom: 141,
+      orientation: :left
   };
 
   def self.check(user)
