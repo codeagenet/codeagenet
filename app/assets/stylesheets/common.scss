@@ -1,3 +1,4 @@
+$cacolor: #fbb450;
 
 .container {
     background: rgba(255,255,255,0.01)
@@ -20,7 +21,7 @@ h1 {
 }
 
 h2 {
-  color: #fbb450;
+  color: $cacolor;
   font-size: 1.6em;
 }
 
@@ -28,6 +29,18 @@ h3 {
   color: #2a85a0   ;
   font-size: 1.3em;
   line-height: 110%;
+}
+
+.cacolor {
+  color: $cacolor;
+}
+
+.calogo {
+  display: inline-block;
+  width: 26px ;
+  height:20px;
+  vertical-align: center;
+  background: url('codeage.png') no-repeat;
 }
 
 .navbar .brand {

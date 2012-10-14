@@ -7,4 +7,5 @@ en:
     formats:
       default: "%Y/%m/%d"
       short: "%b %d"
+      date: "%b %d %Y"
       long: "%B %d, %Y %H:%M"
