@@ -9,7 +9,7 @@
           </span>
           <%= achievement.user.name %>
       <% end %>
-      earned <span class="cacolor"><%= achievement.class.title %></span> <%= time_ago_in_words(achievement.created_at) %> ago
+      earned <span class="cacolor" title="<%= achievement.class.description %>"><%= achievement.class.title %></span> <%= time_ago_in_words(achievement.created_at) %> ago
     </li>
   <% end %>
 </ul>
