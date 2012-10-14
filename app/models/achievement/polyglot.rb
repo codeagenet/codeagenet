@@ -1,7 +1,7 @@
 class Achievement::Polyglot < LeveledAchievement
   Title = 'Polyglot'
   ImagePath = 'achievements/badge_poly.png'
-  Description = 'Uses more than ___ languages.'
+  Description = 'Uses at least ___ languages.'
   Bubble = {
       right: 88,
       bottom: 105,

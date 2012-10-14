@@ -27,7 +27,8 @@ class Achievement < ActiveRecord::Base
         Achievement::Polyglot,
         Achievement::Starrer,
         Achievement::Railsuser,
-        Achievement::Rubyist
+        Achievement::Rubyist,
+        Achievement::Daddy
       ]
     end
 
