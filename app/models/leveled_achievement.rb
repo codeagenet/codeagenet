@@ -25,6 +25,10 @@ class LeveledAchievement < Achievement
   end
 
   class << self
+    def description
+      self::Description.gsub('___', levels[0].to_s)
+    end
+
     def levels
       self::Levels
     end

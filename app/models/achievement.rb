@@ -7,6 +7,10 @@ class Achievement < ActiveRecord::Base
     true
   end
 
+  def description
+    self.class.description
+  end
+
   class << self
     def earn_achievement_for(user)
       create!(:user => user) if check(user)
