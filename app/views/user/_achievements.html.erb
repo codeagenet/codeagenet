@@ -4,12 +4,21 @@
             This user hasn't achieved anything yet.
           </p>
     <% else %>
-        <ul id="achievements_list">
-        <% user.achievements.each do |a| %>
-             <li><%= image_tag(a.class.image_path, :alt => a.class.title) %></li>
-        <% end %>
-        </ul>
+        <p class="alert alert-info">
+          So far <%= (me? user) ? 'you' : 'user' %> earned <%= pluralize(user.achievements.length, 'badge') %>
+        </p>
     <% end %>
+    <ul id="achievements_list">
+    <% (user.achievements).each do |a| %>
+         <li class=""><%= image_tag(a.class.image_path, :alt => a.class.title) %></li>
+    <% end %>
+    <% (user.unearned_achievements).each do |a| %>
+         <li class="unearned"><%= image_tag(a.image_path, :alt => a.title) %></li>
+    <% end %>
+
+    </ul>
+    <div class="clearfix"></div>
+    <%  %>
     <% if me? user %>
         <i>
           Info was updated at <%= l user.achievements_fetched_at, :format => :long %>

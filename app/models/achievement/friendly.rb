@@ -1,6 +1,6 @@
 class Achievement::Friendly < Achievement
   Title = 'Friendly'
-  ImagePath = 'achievements/friendly.jpg'
+  ImagePath = 'achievements/badge_friendly.png'
   Description = 'User has at least 10 mutual follows.'
 
   def self.check(user)

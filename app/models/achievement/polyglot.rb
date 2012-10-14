@@ -1,6 +1,6 @@
 class Achievement::Polyglot < Achievement
   Title = 'Polyglot'
-  ImagePath = 'achievements/polyglot.jpg'
+  ImagePath = 'achievements/badge_poly.png'
   Description = 'User uses more than 3 languages.'
 
   def self.check(user)

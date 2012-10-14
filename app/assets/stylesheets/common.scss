@@ -64,6 +64,27 @@ h3 {
 
 #achievements_container {
   position: relative;
+  padding-right:20px;
+
+  ul {
+    margin:0;
+    padding:0;
+  }
+  li {
+    float: left;
+    list-style: none;
+    margin:0 0 25px 0;
+    padding:0;
+  }
+  li:nth-child(2n) {
+    float:right;
+  }
+  li.unearned {
+    opacity:0.05;
+  }
+  li.unearned:hover {
+    opacity:0.45;
+  }
 }
 
 .spinner {

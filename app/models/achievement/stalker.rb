@@ -1,6 +1,6 @@
 class Achievement::Stalker < Achievement
   Title = 'Stalker'
-  ImagePath = 'achievements/stalker.jpg'
+  ImagePath = 'achievements/badge_stalker.png'
   Description = 'User follows at least 10 users without mutual follows.'
 
   def self.check(user)

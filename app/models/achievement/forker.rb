@@ -1,6 +1,6 @@
 class Achievement::Forker < Achievement
   Title = 'Forker'
-  ImagePath = 'achievements/forker.jpg'
+  ImagePath = 'achievements/badge_forker.png'
   Description = 'User owns at least 10 forks.'
 
   def self.check(user)

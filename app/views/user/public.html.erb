@@ -5,10 +5,10 @@
 
   </p>
 </div>
-<div class="span5">
+<div class="span4">
   <%= render :partial => 'user', :locals => {user: @user} %>
 </div>
-<div class="span7">
+<div class="span8">
   <h2><%= @user.nickname %>'s CodeAge Achievements</h2>
   <%= render :partial => 'achievements', :locals => {user: @user} %>
 </div>

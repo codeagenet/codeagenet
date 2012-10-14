@@ -1,6 +1,6 @@
 class Achievement::Githubbie < Achievement
   Title = 'Githubbie'
-  ImagePath = 'achievements/githubbie.png'
+  ImagePath = 'achievements/badge_hubbie.png'
   Description = 'User owns at least 1 repo.'
 
   def self.check(user)
