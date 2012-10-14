@@ -26,7 +26,7 @@ describe AchievementMailer do
       mail.from.should eq(["noreply@codeage.net"])
 
       mail.body.should include("Forever Alone")
-      mail.body.should include("Stalker")
+      mail.body.should include("Wooden Stalker")
       mail.body.should include(@user.name)
     end
   end

@@ -12,7 +12,13 @@
     data-bottom="<%= a.bubble[:bottom] %>"
     data-left="<%= a.bubble[:left] %>"
     data-right="<%= a.bubble[:right] %>">
-      <span class="achievement-title"><%= a.title %></span>    <br>
+      <span class="achievement-title">
+        <% if earned && a.ancestors.include?(LeveledAchievement) %>
+          <%= achievement.title %>
+        <% else %>
+          <%= a.title %>
+        <% end %>
+      </span>    <br>
       <span class="achievement-description">
         <% if earned && a.ancestors.include?(LeveledAchievement) %>
           <%= achievement.description %>

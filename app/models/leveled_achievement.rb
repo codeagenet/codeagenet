@@ -1,4 +1,12 @@
 class LeveledAchievement < Achievement
+
+  LevelNames = {
+      :gold => "Golden",
+      :silver => "Silver",
+      :bronze => "Bronze",
+      :wood => "Wooden"
+  }
+
   def level
     self.class.get_level_from_number(self.counter.to_i)
   end
@@ -24,13 +32,32 @@ class LeveledAchievement < Achievement
     self.class::Description.gsub('___', number.to_s)
   end
 
+  def title
+    if level
+      titled = LevelNames[level]
+    else
+      titled = LevelNames[:wood]
+    end
+
+    self.class::Title.gsub('___', titled)
+  end
+
   class << self
+
     def description
       self::Description.gsub('___', levels[0].to_s)
     end
 
+    def title
+      self::Title.gsub('___', levelnames[:wood])
+    end
+
     def levels
       self::Levels
+    end
+
+    def levelnames
+      self::LevelNames
     end
 
     def get_level_from_number(number)

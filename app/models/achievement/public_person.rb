@@ -1,5 +1,5 @@
 class Achievement::PublicPerson < LeveledAchievement
-  Title = 'Public Person'
+  Title = '___ Public Person'
   ImagePath = 'achievements/badge_public.png'
   Description = 'Has at least ___ unmutual followers.'
   Bubble = {
