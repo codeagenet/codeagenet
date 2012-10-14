@@ -7,7 +7,7 @@ class Achievement::Polyglot < LeveledAchievement
       bottom: 105,
       orientation: :right
   };
-  Levels = [3,5,7,9]
+  Levels = [3,5,7,10]
 
   def self.check(user)
     user.github.repos.all(type: 'owner').map { |repo| repo.language }.compact.uniq.count
