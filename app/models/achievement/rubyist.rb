@@ -1,5 +1,5 @@
 class Achievement::Rubyist < Achievement
-  Title = 'Rubist'
+  Title = 'Rubyist'
   ImagePath = 'achievements/badge_rubist.png'
   Description = 'Uses Ruby in at least 3 projects.'
   Bubble = {
