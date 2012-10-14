@@ -250,6 +250,10 @@ h1.bigerror {
     float: left;
     margin-right: 9px;
     width: 25px;
+
+    img {
+      max-width:100%;
+    }
   }
 }
 
