@@ -63,10 +63,11 @@ class Achievement < ActiveRecord::Base
     end
 
     def top_users
-      a = Achievement.select('count(id) as c, user_id').limit(10)
-      a = a.group(:user_id).order('c').reverse
+      a = User.select('*, (select count(achievements.id) from achievements where achievements.user_id = users.id) as c')
+      a = a.order('c desc').first(10)
+      #a = Achievement.select('count(id) as c, user_id').first(10).group('user_id').order('c DESC')
 
-      a.map! { |b| {user: b.user, count: b.c}}
+      a.map! { |b| {user: b, count: b.c}}
     end
 
     def recent
