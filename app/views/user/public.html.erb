@@ -10,5 +10,9 @@
 </div>
 <div class="span8">
   <h2><%= @user.nickname %>'s CodeAge Achievements</h2>
-  <%= render :partial => 'achievements', :locals => {user: @user} %>
+  <% if current_user.achievements_fetched_at.nil? %>
+    <div id="achievements_container" clas="notready" />
+  <% else %>
+    <%= render :partial => 'achievements', :locals => {user: current_user} %>
+  <% end %>
 </div>
