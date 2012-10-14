@@ -2,5 +2,7 @@
   <h2 class="name"><%= user.name  %></h2>
   <div class="nickname"><%= user.nickname  %></div>
   <div class="gravatar"><%= image_tag(user.gravatar + '&s=210', :alt => user.name) %></div>
+  <div>Has joined <span class="cacolor">CodeAge</span> at <%= l user.created_at, :format => :date %></div>
+  <div>Is GitHub user since <%= l user.githubber_from, :format => :date %></div>
   <div class="github_link"><a href="http://github.com/<%= user.nickname  %>" target="_blank" class="btn btn-warning">Visit user's GitHub</a></div>
 </div>
