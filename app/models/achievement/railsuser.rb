@@ -1,5 +1,5 @@
 class Achievement::Railsuser < LeveledAchievement
-  Title = 'Rails developer'
+  Title = '___ Rails developer'
   ImagePath = 'achievements/badge_railser.png'
   Description = 'Has at least ___ repositories with Ruby on Rails.'
   Bubble = {

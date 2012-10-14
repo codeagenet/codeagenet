@@ -1,5 +1,5 @@
 class Achievement::Forker < LeveledAchievement
-  Title = 'Forker'
+  Title = '___ Forker'
   ImagePath = 'achievements/badge_forker.png'
   Description = 'Owns at least ___ forks.'
   Bubble = {

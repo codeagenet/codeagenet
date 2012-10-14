@@ -1,5 +1,5 @@
 class Achievement::Daddy < LeveledAchievement
-  Title = 'Daddy'
+  Title = '___ Daddy'
   ImagePath = 'achievements/badge_daddy.png'
   Description = 'Owns at least ___ repos.'
   Bubble = {

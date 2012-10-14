@@ -1,5 +1,5 @@
 class Achievement::Friendly < LeveledAchievement
-  Title = 'Friendly'
+  Title = '___ Friendly'
   ImagePath = 'achievements/badge_friendly.png'
   Description = 'Has at least ___ mutual follows.'
   Bubble = {

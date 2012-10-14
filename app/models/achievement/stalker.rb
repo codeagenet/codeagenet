@@ -1,5 +1,5 @@
 class Achievement::Stalker < LeveledAchievement
-  Title = 'Stalker'
+  Title = '___ Stalker'
   ImagePath = 'achievements/badge_stalker.png'
   Description = 'Follows at least ___ users without mutual follows.'
   Bubble = {
