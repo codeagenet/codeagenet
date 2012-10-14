@@ -11,7 +11,7 @@
 <div class="span8">
   <h2><%= @user.nickname %>'s CodeAge Achievements</h2>
   <% if current_user.achievements_fetched_at.nil? %>
-    <div id="achievements_container" clas="notready" />
+    <div id="achievements_container" class="notready"></div>
   <% else %>
     <%= render :partial => 'achievements', :locals => {user: current_user} %>
   <% end %>

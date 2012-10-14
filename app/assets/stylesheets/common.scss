@@ -55,10 +55,17 @@ h3 {
   background: url('codeage.png') no-repeat;
 }
 
-.navbar .brand {
-    color: #c67605;
-}
+.navbar {
 
+  li > a.nav-item {
+    margin-top: -10px;
+    padding: 20px 10px;
+  }
+
+ .brand {
+    color: #c67605;
+  }
+}
 .page > * > * {
   margin-left: 15px;
   margin-right: 15px;
@@ -102,6 +109,7 @@ h3 {
 #achievements_container {
   position: relative;
   padding-right:20px;
+  min-height: 200px;
 
   ul {
     margin:0;
@@ -210,6 +218,6 @@ h3 {
   margin-left: 50px;
 
   li {
-    font-size:1.5em;
+    font-size:1.25em;
   }
 }
