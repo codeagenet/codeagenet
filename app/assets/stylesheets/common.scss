@@ -43,6 +43,12 @@ h3 {
   line-height: 110%;
 }
 
+h1.bigerror {
+  font-size: 7em;
+  line-height: 153px;
+  margin:0;
+}
+
 .cacolor {
   color: $cacolor;
 }
@@ -213,6 +219,17 @@ h3 {
 
 }
 
+.emptybadge {
+  background: url('badge_empty.png');
+  width: 240px;
+  height: 150px;
+  h1 {
+    display: inline-block;
+    line-height: 150px;
+    text-align: center;
+    width: 100%;
+  }
+}
 
 .whywearecool {
   margin-left: 50px;
@@ -221,3 +238,19 @@ h3 {
     font-size:1.25em;
   }
 }
+
+.celler {
+  list-style: none;
+
+  li {
+    height: 45px;
+  }
+
+  .photo {
+    float: left;
+    margin-right: 9px;
+  }
+}
+
+
+
