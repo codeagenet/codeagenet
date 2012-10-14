@@ -22,7 +22,8 @@ class Achievement < ActiveRecord::Base
         Achievement::Githubbie,
         Achievement::Polyglot,
         Achievement::Starrer,
-        Achievement::Railsuser
+        Achievement::Railsuser,
+        Achievement::Rubyist
       ]
     end
 
