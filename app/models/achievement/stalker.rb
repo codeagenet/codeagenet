@@ -7,7 +7,7 @@ class Achievement::Stalker < LeveledAchievement
       bottom: 119,
       orientation: :right
   };
-  Levels = [2, 5, 7, 10]
+  Levels = [5, 20, 40, 100]
 
   def self.check(user)
     followers = user.github.users.followers.all.map { |f| f.login }

@@ -27,7 +27,8 @@ class Achievement < ActiveRecord::Base
         Achievement::Polyglot,
         Achievement::Starrer,
         Achievement::Railsuser,
-        Achievement::Rubyist
+        Achievement::Rubyist,
+        Achievement::Daddy
       ]
     end
 
@@ -69,7 +70,7 @@ class Achievement < ActiveRecord::Base
     end
 
     def recent
-      Achievement.order(:created_at).limit(10)
+      Achievement.order('created_at DESC').limit(10)
     end
   end
 end

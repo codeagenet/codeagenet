@@ -5,9 +5,9 @@
     <li>
       <%= link_to user_path(:username => element[:user].nickname) do %>
           <span class="photo">
-            <%= image_tag(element[:user].gravatar + '&s=36', :alt => element[:user].name) %>
+            <%= image_tag(element[:user].gravatar + '&s=36', :alt => element[:user]) %>
           </span>
-          <%= element[:user].name %>
+          <%= element[:user] %>
       <% end %>
   has <%= element[:count] %> badges.
     </li>
