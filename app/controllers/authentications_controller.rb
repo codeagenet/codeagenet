@@ -24,7 +24,7 @@ class AuthenticationsController < ApplicationController
       user = User.new
       user.apply_omniauth(auth)
       if user.save(validate: false)
-        user.update_attribute(:githubber_from, Time.parse(user.github.users.get.created_at)
+        user.update_attribute(:githubber_from, Time.parse(user.github.users.get.created_at))
         flash[:notice] = "Account created and signed in successfully"
         user.async_earn_achievements if user.achievements_fetched_at.nil?
         sign_in_and_redirect(:user, user)
