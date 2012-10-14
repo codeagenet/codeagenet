@@ -7,8 +7,7 @@
           <span class="photo">
             <%= image_tag(achievement.user.gravatar + '&s=36', :alt => achievement.user) %>
           </span>
-          <%= achievement.user %>
-      <% end %>
+          <%= achievement.user %><% end %>
       earned <span class="cacolor" title="<%= achievement.class.description %>"><%= achievement.class.title %></span> <%= time_ago_in_words(achievement.created_at) %> ago
     </li>
   <% end %>
