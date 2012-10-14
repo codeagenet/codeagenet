@@ -1,30 +1,32 @@
 <div id="achievements_container">
-    <% if user.achievements.empty? %>
-          <p class="alert alert-error">
-            This user hasn't achieved anything yet.
-          </p>
-    <% else %>
-        <p class="alert alert-info">
-          So far <%= (me? user) ? 'you' : 'user' %> earned <%= pluralize(user.achievements.length, 'badge') %>
-        </p>
-    <% end %>
-    <ul id="achievements_list">
-    <% (user.achievements).each do |a| %>
-          <%= render :partial => 'badge', :locals => {a: a.class, unearned: false } %>
-    <% end %>
-    <% (user.unearned_achievements).each do |a| %>
-          <%= render :partial => 'badge', :locals => {a: a, unearned: true } %>
+  <% if user.achievements.empty? %>
+      <p class="alert alert-error">
+      This user hasn't achieved anything yet.
+      </p>
+  <% else %>
+    <p class="alert alert-info">
+      So far <%= (me? user) ? 'you' : 'user' %> have earned <%= pluralize(user.achievements.length, 'badge') %>
+    </p>
+  <% end %>
+
+  <ul id="achievements_list">
+    <% user.achievements.each do |a| %>
+      <%= render :partial => 'badge', :locals => {a: a.class, earned: true, achievement: a } %>
     <% end %>
 
-    </ul>
-    <div class="clearfix"></div>
-    <%  %>
-    <% if me? user %>
-        <i>
-          Info was updated at <%= l user.achievements_fetched_at, :format => :long %>
-        </i>
-        <p>
-          <a class="btn btn-warning" id="force_earn">Update now!</a>
-        </p>
+    <% user.unearned_achievements.each do |a| %>
+        <%= render :partial => 'badge', :locals => {a: a, earned: false } %>
     <% end %>
+  </ul>
+
+  <div class="clearfix"></div>
+
+  <% if me? user %>
+    <i>
+      Info was updated at <%= l user.achievements_fetched_at, :format => :long %>
+    </i>
+    <p>
+      <a class="btn btn-warning" id="force_earn">Update now!</a>
+    </p>
+  <% end %>
 </div>

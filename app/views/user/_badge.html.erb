@@ -1,8 +1,10 @@
-<li class="codeage-badge <%= unearned ? 'unearned' : ''%>">
+<li class="codeage-badge <%= earned ? '' : 'unearned'%>">
   <%= image_tag(a.image_path, :alt => a.title) %>
-  <% if !unearned %>
-    <span class="level level-wood"></span>
+
+  <% if earned && a.ancestors.include?(LeveledAchievement) %>
+    <span class="level level-<%=achievement.level%>"></span>
   <% end %>
+
   <p class="description bubble speech"
     data-orientation="<%= a.bubble[:orientation] %>"
     data-bottom="<%= a.bubble[:bottom] %>"
