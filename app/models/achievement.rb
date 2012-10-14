@@ -20,7 +20,8 @@ class Achievement < ActiveRecord::Base
        Achievement::Stalker,
        Achievement::Githubbie,
        Achievement::Polyglot,
-       Achievement::Railsrumbler
+       Achievement::Railsrumbler,
+       Achievement::Starrer
       ]
     end
 
