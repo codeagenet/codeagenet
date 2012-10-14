@@ -269,6 +269,10 @@ h1.bigerror {
   color: #fff;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
 
+  .close {
+    margin-top: -2px;
+  }
+
   a {
     color: #f8a436;
   }
