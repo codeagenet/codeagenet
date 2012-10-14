@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :authentications, :dependent => :delete_all
 
   def to_s
-    name || nickname || email
+    name.empty? ? nickname : name
   end
 
   # Auth
