@@ -1,4 +1,11 @@
-== Codeage
+= Codeage
+
+== About
+
+CodeAge is a githbub-based leveling game created while RailsRumble'12 coding session. CodeAge users achive bages based on their social and coding activity on github.
+CodeAge was created JustForFun:) Some bages given in facetious maner. U MAD BRO? ))
+
+Join us and take a look what have you achived
 
 === Important config values:
 
