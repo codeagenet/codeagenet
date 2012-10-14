@@ -12,6 +12,9 @@ gem 'oauth2'
 gem 'omniauth-github'
 gem "github_api"
 gem "js-routes"
+gem "gemnasium-parser"
+
+gem 'cells'
 
 gem 'resque'
 gem 'resque-scheduler', :require => 'resque_scheduler'
@@ -46,7 +49,10 @@ group :development, :test do
   gem 'pry', :group => :tddium_ignore
   gem 'pry-nav'
 
+  gem 'awesome_print'
+
 	gem 'rspec-rails'
+  gem 'rspec-cells'
   gem 'shoulda-matchers'
   gem 'accept_values_for'
 

@@ -21,7 +21,8 @@ class Achievement < ActiveRecord::Base
         Achievement::Stalker,
         Achievement::Githubbie,
         Achievement::Polyglot,
-        Achievement::Starrer
+        Achievement::Starrer,
+        Achievement::Railsuser
       ]
     end
 
@@ -53,6 +54,17 @@ class Achievement < ActiveRecord::Base
 
     def hidden?
       list_hidden.include?(self)
+    end
+
+    def top_users
+      a = Achievement.select('count(id) as c, user_id').limit(10)
+      a = a.group(:user_id).order('c').reverse
+
+      a.map! { |b| {user: b.user, count: b.c}}
+    end
+
+    def recent
+      Achievement.order(:created_at).limit(10)
     end
   end
 end

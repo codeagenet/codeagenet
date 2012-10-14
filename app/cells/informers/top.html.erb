@@ -1,0 +1,10 @@
+<h2>Top Badgers</h2>
+
+<ul>
+  <% @tops.each do |element| %>
+    <li>
+      <%= link_to element[:user].to_s, user_path(:username => element[:user].nickname) %> 
+  has <%= element[:count] %> badges.
+    </li>
+  <% end %>
+</ul>

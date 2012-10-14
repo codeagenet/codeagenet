@@ -1,0 +1,10 @@
+<h2>Recent Earners</h2>
+
+<ul>
+  <% @recent_achievements.each do |achievement| %>
+    <li>
+      <%= link_to achievement.user.to_s, user_path(:username => achievement.user.nickname) %> 
+      earned <%= achievement.class.title %> <%= time_ago_in_words(achievement.created_at) %> ago
+    </li>
+  <% end %>
+</ul>
