@@ -3,8 +3,8 @@ class Achievement::Daddy < LeveledAchievement
   ImagePath = 'achievements/badge_daddy.png'
   Description = 'Owns at least ___ repos.'
   Bubble = {
-      right: 84,
-      bottom: 88,
+      right: 46,
+      bottom: 92,
       orientation: :right
   };
   Levels = [20,50,100,200]
