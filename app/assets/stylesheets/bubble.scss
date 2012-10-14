@@ -11,6 +11,7 @@ p.bubble
   padding: 20px;
   border-radius: 30px;
   box-shadow: 2px 2px 4px #000;
+  z-index: 65;
 }
 
 p.bubble:before, p.bubble:after

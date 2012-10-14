@@ -89,7 +89,12 @@ h3 {
     float: left;
     list-style: none;
     margin:0 0 25px 0;
-    padding:0;
+
+
+    img {
+      position: relative;
+      z-index: 45;
+    }
   }
   li:nth-child(2n) {
     float:right;
@@ -108,16 +113,29 @@ h3 {
 }
 
 .level {
-      position: absolute;
+  position: absolute;
   right:0;
   top:0;
-  width: 118px;
-  height: 74px;
+  width: 240px;
+  height: 150px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
 }
 
-.level-wooden {
+.level-wood {
+  background: url('achievements/level-wooden.png') center center no-repeat;
+}
 
-  background-image: url('achievements/level-wooden.png');
+.level-bronze {
+  background: url('achievements/level-bronze.png') center center no-repeat;
+}
+
+.level-silver {
+  background: url('achievements/level-silver.png') center center no-repeat;
+}
+
+.level-gold {
+  background: url('achievements/level-golden.png') center center no-repeat;
 }
 
 .codeage-badge {
