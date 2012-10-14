@@ -38,5 +38,21 @@ shared_examples "leveled achievement" do
       ach.class.should == described_class
       ach.level.should == :wood
     end
+
+    it "should make level ups" do
+      user = Fabricate :user
+
+      described_class.should_receive(:check).with(user).and_return(described_class.levels[0])
+      described_class.should_receive(:check).with(user).and_return(described_class.levels[2])
+
+      #it should return new achievement object
+      described_class.earn_achievement_for(user)
+      described_class.earn_achievement_for(user)
+
+      user.achievements.count.should == 1
+      ach = user.achievements.first
+      ach.class.should == described_class
+      ach.level.should == :silver
+    end
   end
 end
