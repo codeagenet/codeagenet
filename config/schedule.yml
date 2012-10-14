@@ -1,2 +1,4 @@
-CheckNewAchievements:
-  cron: "*/10 * * * *"
+achievements:
+  cron: "*/5 * * * *"
+  class: CheckNewAchievements
+  queue: high

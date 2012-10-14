@@ -1,4 +1,5 @@
 require 'resque/server'
+require 'resque_scheduler/server'
 
 Codeage::Application.routes.draw do
   mount Resque::Server.new, :at => "/settings/resque"
