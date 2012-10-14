@@ -71,7 +71,7 @@ class Achievement < ActiveRecord::Base
     end
 
     def recent
-      Achievement.order('created_at DESC').top(10)
+      Achievement.order('created_at DESC').limit(10)
     end
   end
 end
