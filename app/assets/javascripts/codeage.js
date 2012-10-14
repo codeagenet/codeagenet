@@ -1,5 +1,45 @@
 $(function () {
 
+    /* adjust badges display / visual effects */
+
+    $.fn.codeage_bubble = function () {
+         this.each (function () {
+             $this = $(this);
+             var left = parseInt( $this.attr('data-left') );
+             var right = parseInt( $this.attr('data-right') );
+             var bottom = parseInt( $this.attr('data-bottom') );
+             var top = parseInt( $this.attr('data-top') );
+             var orientation = $this.attr('data-orientation');
+
+             var css_attrs = {
+                 'left': isNaN(left) ? 'auto' : left + 'px',
+                 'right': isNaN(right) ? 'auto' : right + 'px',
+                 'bottom': isNaN(bottom) ? 'auto' : bottom + 'px',
+                 'top': isNaN(top) ? 'auto' : top + 'px'
+             }
+             console.log(css_attrs);
+             $this
+                 .css(css_attrs)
+                 .addClass('bubble')
+                 .addClass('speech')
+                 .addClass('bubble' + (orientation ? orientation : 'left'));
+         })
+    }
+
+    $.fn.codeage_badge = function () {
+        this.each (function () {
+            var $this = $(this);
+            var $description = $this.children('.description');
+            $description.codeage_bubble();
+
+            $this.hover(function (){
+                $description.fadeIn(200);
+            }, function() {
+                $description.fadeOut(500);
+            });
+        })
+    }
+
     Codeage = function () {
         var that = this;
 
@@ -23,8 +63,10 @@ $(function () {
                 that.achievements_cont.replaceWith( data );
                 clearInterval( that.ap_interval );
             }
-
         }
+
+
+        this.badge_elems = $('.codeage-badge').codeage_badge();
     }
     var codeage = new Codeage;
 
@@ -35,6 +77,6 @@ $(function () {
 
     /* common */
     setTimeout(function () {
-        $('.flash').fadeOut(3000)
+        $('.flash').animate({opacity:0}, 2000, null, function() {$(this).slideUp(1500)})
     }, 2000);
 })

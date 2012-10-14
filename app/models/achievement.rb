@@ -20,6 +20,10 @@ class Achievement < ActiveRecord::Base
       self::Title
     end
 
+    def bubble
+      self::Bubble
+    end
+
     def description
       self::Description
     end

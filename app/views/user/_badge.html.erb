@@ -1,0 +1,11 @@
+<li class="codeage-badge <%= unearned ? 'unearned' : ''%>">
+  <%= image_tag(a.image_path, :alt => a.title) %>
+  <p class="description bubble speech"
+    data-orientation="<%= a.bubble[:orientation] %>"
+    data-bottom="<%= a.bubble[:bottom] %>"
+    data-left="<%= a.bubble[:left] %>"
+    data-right="<%= a.bubble[:right] %>">
+      <span class="achievement-title"><%= a.title %></span>    <br>
+      <span class="achievement-description"><%= a.description %></span>
+  </p>
+</li>

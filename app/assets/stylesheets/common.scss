@@ -71,6 +71,8 @@ h3 {
     padding:0;
   }
   li {
+
+    position: relative;
     float: left;
     list-style: none;
     margin:0 0 25px 0;
@@ -79,12 +81,23 @@ h3 {
   li:nth-child(2n) {
     float:right;
   }
-  li.unearned {
+  li.unearned img {
     opacity:0.05;
   }
-  li.unearned:hover {
+  li.unearned:hover img {
     opacity:0.45;
   }
+}
+
+.codeage-badge {
+  .description {
+    display: none;
+  }
+}
+
+.achievement-title {
+  color: #2a85a0   ;
+  font-size: 1.3em;
 }
 
 .spinner {
