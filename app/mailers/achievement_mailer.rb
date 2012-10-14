@@ -6,9 +6,9 @@ class AchievementMailer < ActionMailer::Base
     @user = user
 
     if achievements.count == 1
-      subject = "Wow! You got a new bage - #{achievements.first.class.title}!"
+      subject = "Wow! You got a new badge - #{achievements.first.class.title}!"
     else
-      subject = "Wow! You got a new bages!"
+      subject = "Wow! You got a new badges!"
     end
 
     mail to: user.email, subject: subject
