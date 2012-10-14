@@ -39,5 +39,9 @@ class Achievement < ActiveRecord::Base
     def description
       self::Description
     end
+
+    def hidden?
+      self.constants.include?(:Hidden) && self::Hidden
+    end
   end
 end
