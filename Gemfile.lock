@@ -12,9 +12,6 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    accept_values_for (0.4.3)
-      activemodel (>= 3.0.0)
-      rspec
     actionmailer (3.2.8)
       actionpack (= 3.2.8)
       mail (~> 2.4.4)
@@ -273,7 +270,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  accept_values_for
   awesome_print
   capistrano-resque
   cells
