@@ -10,6 +10,11 @@
     </span> users that helps to improve your Github activity by giving you badges and achievements depending on your projects experience.
   </p>
   <p>
+    <% if !user_signed_in? %>
+      <a href="/settings/auth/github" class="btn btn-warning">Get started!</a>
+    <% end %>
+  </p>
+  <p>
     <h2>Reasons to use us</h2>
     <ol class="whywearecool">
       <li>It's fun!</li>

@@ -253,9 +253,14 @@ h1.bigerror {
   }
 }
 
+.signin {
+  margin-top: -4px !important;
+}
+
 .topplate {
   position: absolute;
   opacity:0.9;
+  text-align: center;
   top:0;
   left:0;
   right:0;
