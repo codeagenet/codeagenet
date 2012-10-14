@@ -36,9 +36,11 @@ $(function () {
             $this.mouseenter(function (){
                 $this.addClass('preview')
                 $description.fadeIn(200);
+                $img.animate({opacity: 1}, 200);
             }).mouseleave(function() {
                 $this.removeClass('preview')
                 $description.fadeOut(500);
+                $img.animate({opacity: $this.hasClass('unearned') ? 0.05  : 1}, 500);
             });
         })
     }

@@ -13,11 +13,11 @@
 
         <% if user_signed_in? %>
           <%= link_to destroy_user_session_path, class: 'signinout btn pull-right', method: :delete do %>
-            Logout<span class="icon icon-off"></span>
+            Logout <span class="icon icon-white icon-off"></span>
           <% end %>
 
           <%= link_to user_path(:username => current_user.nickname), :class => "topusername badge badge-info pull-right" do %>
-              <span class="icon icon-user"></span>
+              <span class="icon icon-white icon-user"></span>
               <span>
                 <%= current_user.nickname %>
               </span>
