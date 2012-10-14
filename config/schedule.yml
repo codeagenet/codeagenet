@@ -1,4 +1,4 @@
 achievements:
   cron: "*/5 * * * *"
   class: CheckNewAchievements
-  queue: high
+  queue: cron
