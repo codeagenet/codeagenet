@@ -1,7 +1,7 @@
 class Achievement::Githubbie < Achievement
   Title = 'Githubbie'
   ImagePath = 'achievements/badge_hubbie.png'
-  Description = 'User owns at least 1 repo.'
+  Description = 'Owns at least 1 repo.'
   Bubble = {
       left: 45,
       bottom: 77,
