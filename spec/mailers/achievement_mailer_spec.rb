@@ -10,7 +10,7 @@ describe AchievementMailer do
     let(:mail) { AchievementMailer.creation(@user, @achievements) }
 
     it "single achievement" do
-      mail.subject.should eq("Wow! You got a new bage - Forever Alone!")
+      mail.subject.should eq("Wow! You got a new badge - Forever Alone!")
       mail.to.should eq([@user.email])
       mail.from.should eq(["noreply@codeage.net"])
 
@@ -21,7 +21,7 @@ describe AchievementMailer do
     it "multiple achievements" do
       @achievements.push Achievement::Stalker.create!(:user => @user)
 
-      mail.subject.should eq("Wow! You got a new bages!")
+      mail.subject.should eq("Wow! You got a new badges!")
       mail.to.should eq([@user.email])
       mail.from.should eq(["noreply@codeage.net"])
 

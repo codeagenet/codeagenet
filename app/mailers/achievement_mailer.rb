@@ -1,5 +1,5 @@
 class AchievementMailer < ActionMailer::Base
-  default from: "noreply@codeage.net"
+  default from: "\"CodeAge mailer\" <noreply@codeage.net>"
 
   def creation(user, achievements)
     @achievements = achievements
