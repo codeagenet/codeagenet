@@ -1,7 +1,7 @@
 class Achievement::PublicPerson < LeveledAchievement
   Title = 'Public Person'
   ImagePath = 'achievements/badge_public.png'
-  Description = 'User has at least 10 unmutual followers.'
+  Description = 'User has at least ___ unmutual followers.'
   Bubble = {
       right: 108,
       bottom: 101,

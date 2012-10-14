@@ -7,6 +7,23 @@ class LeveledAchievement < Achievement
     true if level
   end
 
+  def description
+    variants = {
+      :gold => 3,
+      :silver => 2,
+      :bronze => 1,
+      :wood => 0
+    }
+
+    if level
+      number = self.class.levels[variants[level]]
+    else
+      number = self.class.levels[0]
+    end
+
+    self.class::Description.gsub('___', number.to_s)
+  end
+
   class << self
     def levels
       self::Levels

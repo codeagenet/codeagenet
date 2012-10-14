@@ -1,7 +1,7 @@
 class Achievement::Friendly < LeveledAchievement
   Title = 'Friendly'
   ImagePath = 'achievements/badge_friendly.png'
-  Description = 'User has at least 10 mutual follows.'
+  Description = 'User has at least ___ mutual follows.'
   Bubble = {
       right: 45,
       bottom: 104,
