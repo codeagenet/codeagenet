@@ -21,3 +21,4 @@ require "capistrano-resque"
 set :workers, { "realtime" => 2, "realtime,cron" => 1 }
 
 after "deploy:restart", "resque:restart"
+after "deploy:restart", "resque:scheduler:restart"
