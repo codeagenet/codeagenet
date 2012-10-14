@@ -5,7 +5,7 @@
     <li>
       <%= link_to user_path(:username => element[:user].nickname) do %>
           <span class="photo">
-            <%= image_tag(element[:user].gravatar + '&s=36', :alt => element[:user]) %>
+            <%= image_tag(element[:user].gravatar + '&s=36', :alt => element[:user], :width => 25, :height => 25) %>
           </span>
           <%= element[:user] %><% end %>
 
