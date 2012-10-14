@@ -33,10 +33,10 @@ $(function () {
             var $img = $this.children('img');
             $description.codeage_bubble();
 
-            $this.click(function (){
+            $this.mouseenter(function (){
                 $this.addClass('preview')
                 $description.fadeIn(200);
-            }).mouseout(function() {
+            }).mouseleave(function() {
                 $this.removeClass('preview')
                 $description.fadeOut(500);
             });
