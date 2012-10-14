@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
     list = Achievement.list
 
     self.achievements.each do |a|
-      list.delete(a.class) unless a.is_a? LeveledAchievement
+      list.delete(a.class)
     end
 
     list

@@ -1,4 +1,4 @@
-class Achievement::PublicPerson < Achievement
+class Achievement::PublicPerson < LeveledAchievement
   Title = 'Public Person'
   ImagePath = 'achievements/badge_public.png'
   Description = 'User has at least 10 unmutual followers.'
@@ -7,10 +7,11 @@ class Achievement::PublicPerson < Achievement
       bottom: 101,
       orientation: :right
   };
+  Levels = [10,50,200,1000]
 
   def self.check(user)
     followers = user.github.users.followers.all.map { |f| f.login }
     following = user.github.users.followers.following.map { |f| f.login }
-    (followers - following).count >= 10
+    (followers - following).count
   end
 end

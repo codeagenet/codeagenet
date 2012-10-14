@@ -66,6 +66,23 @@ describe User do
 
         user.earn_achievements
       end
+
+      it "unearned_achievements should work with leveled achievements" do
+        Achievement::Forker.should_receive(:check).with(user).and_return 1000
+
+        list = Achievement.list
+        list.delete(Achievement::Forker)
+        list.each {|ac| ac.should_receive(:check).with(user).and_return(false)}
+
+        user.earn_achievements
+
+        user.achievements.count.should == 1
+        ach = user.achievements.first
+        ach.should be_a_kind_of Achievement::Forker
+        ach.level.should == :gold
+
+        user.unearned_achievements.should =~ list
+      end
     end
   end
 end

@@ -38,5 +38,5 @@ Codeage::Application.configure do
   config.github_app_id = '3e8cd14affa00e5b5f51'
   config.github_app_secret = '1bb8b59f78f4f8d7b557e4798292387362c24943'
 
-  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.delivery_method = :test
 end

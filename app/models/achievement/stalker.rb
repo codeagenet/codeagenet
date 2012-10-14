@@ -1,4 +1,4 @@
-class Achievement::Stalker < Achievement
+class Achievement::Stalker < LeveledAchievement
   Title = 'Stalker'
   ImagePath = 'achievements/badge_stalker.png'
   Description = 'User follows at least 10 users without mutual follows.'
@@ -7,11 +7,12 @@ class Achievement::Stalker < Achievement
       bottom: 119,
       orientation: :right
   };
+  Levels = [2, 5, 7, 10]
 
   def self.check(user)
     followers = user.github.users.followers.all.map { |f| f.login }
     following = user.github.users.followers.following.map { |f| f.login }
-    (following - followers).count >= 10
+    (following - followers).count
   end
 
 end
