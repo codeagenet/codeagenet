@@ -4,7 +4,7 @@ describe AchievementMailer do
   describe "creation" do
     before :each do
       @user = Fabricate(:user)
-      @achievements = [Achievement::ForeverAlone.create!(:user => @user, :got_it => true)]
+      @achievements = [Achievement::ForeverAlone.create!(:user => @user)]
     end
 
     let(:mail) { AchievementMailer.creation(@user, @achievements) }
@@ -19,7 +19,7 @@ describe AchievementMailer do
     end
 
     it "multiple achievements" do
-      @achievements.push Achievement::Stalker.create!(:user => @user, :got_it => true)
+      @achievements.push Achievement::Stalker.create!(:user => @user)
 
       mail.subject.should eq("Wow! You got a new bages!")
       mail.to.should eq([@user.email])

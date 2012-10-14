@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
     list = Achievement.list
 
     self.achievements.each do |a|
-      list.delete(a.class) if a.got_it?
+      list.delete(a.class) unless a.is_a? LeveledAchievement
     end
 
     list
@@ -53,7 +53,9 @@ class User < ActiveRecord::Base
     earned = []
 
     unearned_achievements.each do |achievement|
-      earned.push achievement.create!(:user => self, :got_it => true) if achievement.check(self)
+      a = achievement.earn_achievement_for(self)
+
+      earned.push a if a
     end
 
     unless earned.empty?

@@ -15,7 +15,7 @@ describe User do
       end
 
       it "should not include achieved" do
-        Achievement::ForeverAlone.create!(:user => user, :got_it => true)
+        Achievement::ForeverAlone.create!(:user => user)
 
         unearned = user.unearned_achievements
         unearned.should_not include Achievement::ForeverAlone
