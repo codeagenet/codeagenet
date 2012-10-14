@@ -1,16 +1,11 @@
 <%- title @user.name %>
 <% metatitle "Checkout my badges on CodeAge" if (me? @user) %>
-<div class="span12">
-  <h1>Public Profile</h1>
-  <p>
 
-  </p>
-</div>
 <div class="span4">
   <%= render :partial => 'user', :locals => {user: @user} %>
 </div>
 <div class="span8">
-  <h2><%= @user.nickname %>'s CodeAge Achievements</h2>
+  <h2><%= @user.nickname %>'s achievements</h2>
   <% if @user.achievements_fetched_at.nil? && (me? @user) %>
     <div id="achievements_container" class="notready"></div>
   <% else %>
