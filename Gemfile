@@ -54,7 +54,6 @@ group :development, :test do
 	gem 'rspec-rails'
   gem 'rspec-cells'
   gem 'shoulda-matchers'
-  gem 'accept_values_for'
 
   gem 'letter_opener'
   #cleaner dev server log
