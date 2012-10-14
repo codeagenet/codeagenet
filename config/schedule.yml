@@ -1,2 +1,2 @@
 CheckNewAchievements:
-  cron: "0 * * * *"
+  cron: "*/10 * * * *"

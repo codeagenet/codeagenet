@@ -18,6 +18,6 @@ set :repository,  "git@github.com:railsrumble/r12-team-479.git"
 
 require "capistrano-resque"
 
-set :workers, { "realtime" => 2, "realtime,cron" => 2 }
+set :workers, { "realtime" => 2, "realtime,cron" => 1 }
 
 after "deploy:restart", "resque:restart"
