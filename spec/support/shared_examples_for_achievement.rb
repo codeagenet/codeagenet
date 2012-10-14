@@ -16,4 +16,18 @@ shared_examples "achievement" do
     described_class.title.should_not be_nil
     described_class.description.should_not be_nil
   end
+
+  it "should have buble parameters" do
+    b = described_class.bubble.with_indifferent_access
+    b[:orientation].should_not be_nil
+
+    a = []
+    variants = ['left', 'bottom', 'top', 'right']
+
+    variants.each do |k|
+      a.push k if b.has_key?(k)
+    end
+
+    (variants - a).count.should == 2
+  end
 end
