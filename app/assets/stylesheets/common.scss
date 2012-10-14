@@ -1,5 +1,17 @@
 $cacolor: #fbb450;
 
+html {
+  background: url('bg.png')
+}
+
+body {
+  background: url('bg-body.png') repeat-x;
+}
+
+body > .container {
+  background: rgba(25,25,25,0.9);
+}
+
 .container {
     background: rgba(255,255,255,0.01)
 }
@@ -66,8 +78,20 @@ h3 {
   }
 }
 
-.topusername {
-  margin: 11px 5px 0 0;
+.tmcont {
+  padding-top: 10px;
+
+  .brand {
+    margin-top: -10px;
+  }
+
+  .topusername {
+    margin: 10px 10px 0 0;
+  }
+}
+
+.twitter-follow-button {
+
 }
 
 // hack
@@ -179,4 +203,13 @@ h3 {
     }
   }
 
+}
+
+
+.whywearecool {
+  margin-left: 50px;
+
+  li {
+    font-size:1.5em;
+  }
 }

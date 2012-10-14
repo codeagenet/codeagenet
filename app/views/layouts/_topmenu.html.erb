@@ -1,6 +1,6 @@
 <div class="navbar">
   <div class="navbar-inner">
-    <div class="container">
+    <div class="container tmcont">
       <a href="/" class="brand"><%= image_tag 'codeage.png', :alt=>'CodeAge' %> CodeAge</a>
       <div class="navbar-content">
         <ul class="nav">
@@ -8,7 +8,7 @@
         </ul>
 
         <% if user_signed_in? %>
-          <%= link_to destroy_user_session_path, class: 'btn pull-right', method: :delete do %>
+          <%= link_to destroy_user_session_path, class: 'signinout btn pull-right', method: :delete do %>
             Logout<span class="icon icon-off"></span>
           <% end %>
 
@@ -19,7 +19,7 @@
               </span>
           <% end %>
         <% else %>
-          <a class="btn pull-right" href="/settings/auth/github">
+          <a class="signinout btn pull-right" href="/settings/auth/github">
             Login with
             <%= image_tag 'github.png' %>GitHub
           </a>

@@ -46,9 +46,13 @@ $(function () {
     Codeage = function () {
         var that = this;
 
+        this.get_achievement_cont = function () {
+            return $('#achievements_container');
+        }
+
         this.spinner = $('<span>').addClass('spinner')
         this.force_earn = function ( callback ) {
-            this.achievements_cont = $('#achievements_container');
+            this.achievements_cont = this.get_achievement_cont();
             this.achievements_cont.append(this.spinner);
             console.log('forcing earn');
             $.get(Routes.force_earn_user_index_path(), {}, function ( data ) {
@@ -68,7 +72,6 @@ $(function () {
             }
         }
 
-
         this.badge_elems = $('.codeage-badge').codeage_badge();
     }
     var codeage = new Codeage;
@@ -76,7 +79,11 @@ $(function () {
     /* event handlers */
     $('#force_earn').live ('click', function () {
         codeage.force_earn(codeage.poll_achievements);
-    })
+    });
+
+    if (codeage.get_achievement_cont().hasClass('notready')) {
+        codeage.force_earn(codeage.poll_achievements);
+    }
 
     /* common */
     setTimeout(function () {
