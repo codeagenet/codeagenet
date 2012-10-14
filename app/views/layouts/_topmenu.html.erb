@@ -4,7 +4,11 @@
       <a href="/" class="brand"><%= image_tag 'codeage.png', :alt=>'CodeAge' %> CodeAge</a>
       <div class="navbar-content">
         <ul class="nav">
-
+          <% if user_signed_in? %>
+          <li><%= link_to user_path(:username => current_user.nickname), :class => "nav-item" do %>
+            Profile
+          <% end %>           </li>
+          <% end %>
         </ul>
 
         <% if user_signed_in? %>
