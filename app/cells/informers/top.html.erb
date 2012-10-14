@@ -1,9 +1,14 @@
 <h2>Top Badgers</h2>
 
-<ul>
+<ul class="celler">
   <% @tops.each do |element| %>
     <li>
-      <%= link_to element[:user].to_s, user_path(:username => element[:user].nickname) %> 
+      <%= link_to user_path(:username => element[:user].nickname) do %>
+          <span class="photo">
+            <%= image_tag(element[:user].gravatar + '&s=36', :alt => element[:user].name) %>
+          </span>
+          <%= element[:user].name %>
+      <% end %>
   has <%= element[:count] %> badges.
     </li>
   <% end %>

@@ -1,10 +1,15 @@
 <h2>Recent Earners</h2>
 
-<ul>
+<ul class="celler">
   <% @recent_achievements.each do |achievement| %>
     <li>
-      <%= link_to achievement.user.to_s, user_path(:username => achievement.user.nickname) %> 
-      earned <%= achievement.class.title %> <%= time_ago_in_words(achievement.created_at) %> ago
+      <%= link_to user_path(:username => achievement.user.nickname) do %>
+          <span class="photo">
+            <%= image_tag(achievement.user.gravatar + '&s=36', :alt => achievement.user.name) %>
+          </span>
+          <%= achievement.user.name %>
+      <% end %>
+      earned <span class="cacolor"><%= achievement.class.title %></span> <%= time_ago_in_words(achievement.created_at) %> ago
     </li>
   <% end %>
 </ul>
