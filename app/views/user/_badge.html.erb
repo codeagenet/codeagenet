@@ -3,6 +3,8 @@
 
   <% if earned && a.ancestors.include?(LeveledAchievement) %>
     <span class="level level-<%=achievement.level%>"></span>
+  <% else %>
+    <span class="level level-false"></span>
   <% end %>
 
   <p class="description bubble speech"
