@@ -13,6 +13,8 @@ gem 'omniauth-github'
 gem "github_api"
 gem "js-routes"
 
+gem 'cells'
+
 gem 'resque'
 gem 'resque-scheduler', :require => 'resque_scheduler'
 gem 'capistrano-resque'
@@ -47,6 +49,7 @@ group :development, :test do
   gem 'pry-nav'
 
 	gem 'rspec-rails'
+  gem 'rspec-cells'
   gem 'shoulda-matchers'
   gem 'accept_values_for'
 
