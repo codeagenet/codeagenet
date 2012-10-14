@@ -5,4 +5,11 @@
   <div>Has joined <span class="cacolor"><%= image_tag 'logo25.png' %> CodeAge</span> at <%= l user.created_at, :format => :date %></div>
   <div>Is <%= image_tag 'github.png' %>GitHub user since <%= l user.githubber_from, :format => :date %><br><br></div>
   <div class="github_link"><a href="http://github.com/<%= user.nickname  %>" target="_blank" class="btn btn-warning">Visit user's GitHub</a></div>
+  <% if me? user %>
+      <hr>
+      <div>
+        <span class='st_facebook_large' displayText='Facebook'></span>
+        <span class='st_twitter_large' displayText='Tweet'></span>
+      </div>
+  <% end %>
 </div>
