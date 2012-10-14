@@ -7,7 +7,7 @@ class Achievement::Forker < LeveledAchievement
       bottom: 88,
       orientation: :right
   };
-  Levels = [2,5,10,20]
+  Levels = [5,15,40,100]
 
   def self.check(user)
     user.github.repos.all(type: 'owner').select { |repo| repo.fork == true }.count

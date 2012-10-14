@@ -7,7 +7,7 @@ class Achievement::PublicPerson < LeveledAchievement
       bottom: 101,
       orientation: :right
   };
-  Levels = [2,5,10,100]
+  Levels = [10,50,200,1000]
 
   def self.check(user)
     followers = user.github.users.followers.all.map { |f| f.login }
