@@ -3,9 +3,9 @@ class Achievement::Starrer < LeveledAchievement
   ImagePath = 'achievements/badge_starrer.png'
   Description = 'Has starred at least ___ repos.'
   Bubble = {
-      right: 43,
-      bottom: 119,
-      orientation: :right
+      left: 58,
+      bottom: 134,
+      orientation: :left
   };
   Levels = [10, 25, 50, 100]
 
