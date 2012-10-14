@@ -18,7 +18,7 @@ class Achievement::Railsuser < LeveledAchievement
       end
     end
     gemfiles.map! { |gemfile| Gemnasium::Parser.gemfile(gemfile).dependencies }
-    gemfiles.flatten!.map! { |gem| gem.name }
+    gemfiles = gemfiles.flatten.map! { |gem| gem.name }
     gemfiles.count("rails")
   end
 end
