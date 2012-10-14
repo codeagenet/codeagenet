@@ -11,5 +11,4 @@ class Achievement::Railsrumbler < Achievement
   def self.check(user)
     user.github.orgs.all.map { |org| org.login }.include? "railsrumble"
   end
-
 end

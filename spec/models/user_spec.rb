@@ -27,13 +27,13 @@ describe User do
       it "should earn achievement if check returned true" do
         Achievement::ForeverAlone.should_receive(:check).with(user).and_return true
 
-        list = Achievement.list
+        list = Achievement.list_all
         list.delete(Achievement::ForeverAlone)
         list.each {|ac| ac.should_receive(:check).with(user).and_return(false)}
 
         user.earn_achievements
 
-        user.unearned_achievements.should =~ list
+        user.unearned_achievements.should =~ (list - Achievement.list_hidden)
         user.achievements.count.should == 1
         user.achievements.first.class.should == Achievement::ForeverAlone
       end
@@ -41,7 +41,7 @@ describe User do
       it "should return earned ones" do
         Achievement::ForeverAlone.should_receive(:check).with(user).and_return true
 
-        list = Achievement.list
+        list = Achievement.list_all
         list.delete(Achievement::ForeverAlone)
         list.each {|ac| ac.should_receive(:check).with(user).and_return(false)}
 
@@ -52,7 +52,7 @@ describe User do
       end
 
       it "should mark datetime when done" do
-        Achievement.list.each {|ac| ac.should_receive(:check).with(user).and_return(false)}
+        Achievement.list_all.each {|ac| ac.should_receive(:check).with(user).and_return(false)}
 
         user.earn_achievements
 
@@ -60,7 +60,7 @@ describe User do
       end
 
       it "should send letters" do
-        Achievement.list.each {|ac| ac.should_receive(:check).with(user).and_return(false)}
+        Achievement.list_all.each {|ac| ac.should_receive(:check).with(user).and_return(false)}
 
         AchievementMailer.stub_chain :creation, :deliver
 
@@ -70,7 +70,7 @@ describe User do
       it "unearned_achievements should work with leveled achievements" do
         Achievement::Forker.should_receive(:check).with(user).and_return 1000
 
-        list = Achievement.list
+        list = Achievement.list_all
         list.delete(Achievement::Forker)
         list.each {|ac| ac.should_receive(:check).with(user).and_return(false)}
 
@@ -81,7 +81,23 @@ describe User do
         ach.should be_a_kind_of Achievement::Forker
         ach.level.should == :gold
 
-        user.unearned_achievements.should =~ list
+        user.unearned_achievements.should =~ (list - Achievement.list_hidden)
+      end
+
+      it "gives hidden achievements" do
+        hidden = Achievement.list_hidden.first
+        hidden.should_receive(:check).with(user).and_return true
+
+        list = Achievement.list_all
+        list.delete(hidden)
+        list.each {|ac| ac.should_receive(:check).with(user).and_return(false)}
+
+        res = user.earn_achievements
+        res.count.should == 1
+        res.first.class.should == hidden
+        res.first.user.should == user
+
+        user.unearned_achievements.should =~ Achievement.list
       end
     end
   end

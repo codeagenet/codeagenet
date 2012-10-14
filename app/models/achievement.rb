@@ -13,16 +13,26 @@ class Achievement < ActiveRecord::Base
     end
 
     def list
-      [Achievement::ForeverAlone,
-       Achievement::PublicPerson,
-       Achievement::Forker,
-       Achievement::Friendly,
-       Achievement::Stalker,
-       Achievement::Githubbie,
-       Achievement::Polyglot,
-       Achievement::Railsrumbler,
-       Achievement::Starrer
+      [
+        Achievement::ForeverAlone,
+        Achievement::PublicPerson,
+        Achievement::Forker,
+        Achievement::Friendly,
+        Achievement::Stalker,
+        Achievement::Githubbie,
+        Achievement::Polyglot,
+        Achievement::Starrer
       ]
+    end
+
+    def list_hidden
+      [
+        Achievement::Railsrumbler
+      ]
+    end
+
+    def list_all
+      list + list_hidden
     end
 
     def image_path
@@ -39,6 +49,10 @@ class Achievement < ActiveRecord::Base
 
     def description
       self::Description
+    end
+
+    def hidden?
+      list_hidden.include?(self)
     end
   end
 end
