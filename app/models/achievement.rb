@@ -21,7 +21,8 @@ class Achievement < ActiveRecord::Base
         Achievement::Stalker,
         Achievement::Githubbie,
         Achievement::Polyglot,
-        Achievement::Starrer
+        Achievement::Starrer,
+        Achievement::Railsuser
       ]
     end
 

@@ -12,6 +12,7 @@ gem 'oauth2'
 gem 'omniauth-github'
 gem "github_api"
 gem "js-routes"
+gem "gemnasium-parser"
 
 gem 'cells'
 
@@ -47,6 +48,8 @@ group :development, :test do
   #debugger
   gem 'pry', :group => :tddium_ignore
   gem 'pry-nav'
+
+  gem 'awesome_print'
 
 	gem 'rspec-rails'
   gem 'rspec-cells'
