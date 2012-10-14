@@ -13,7 +13,7 @@ class UserController < ApplicationController
   end
 
   def poll_achievements
-    last_at = Time.parse( params[:last_at] )
+    last_at = params[:last_at].empty? ? 0 : Time.parse( params[:last_at] )
 
     if current_user.achievements_fetched_at.to_i > last_at.to_i
       render :partial => 'user/achievements', :locals => {user: current_user}
