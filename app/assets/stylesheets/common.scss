@@ -84,7 +84,7 @@ h3 {
     padding:0;
   }
   li {
-
+    cursor: pointer;
     position: relative;
     float: left;
     list-style: none;
@@ -96,10 +96,28 @@ h3 {
   }
   li.unearned img {
     opacity:0.05;
+
   }
+
   li.unearned:hover img {
     opacity:0.45;
   }
+  li.unearned.preview img {
+    opacity: 1;
+  }
+}
+
+.level {
+      position: absolute;
+  right:0;
+  top:0;
+  width: 118px;
+  height: 74px;
+}
+
+.level-wooden {
+
+  background-image: url('achievements/level-wooden.png');
 }
 
 .codeage-badge {

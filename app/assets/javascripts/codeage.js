@@ -30,11 +30,14 @@ $(function () {
         this.each (function () {
             var $this = $(this);
             var $description = $this.children('.description');
+            var $img = $this.children('img');
             $description.codeage_bubble();
 
-            $this.hover(function (){
+            $this.click(function (){
+                $this.addClass('preview')
                 $description.fadeIn(200);
-            }, function() {
+            }).mouseout(function() {
+                $this.removeClass('preview')
                 $description.fadeOut(500);
             });
         })
