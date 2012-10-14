@@ -3,8 +3,8 @@ class Achievement::Rubyist < Achievement
   ImagePath = 'achievements/badge_rubist.png'
   Description = 'User uses ruby in at least 3 projects.'
   Bubble = {
-      right: 88,
-      bottom: 105,
+      right: 102,
+      bottom: 153,
       orientation: :right
   };
 
