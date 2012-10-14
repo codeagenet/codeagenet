@@ -17,4 +17,8 @@ describe Achievement::Forker do
     a = Achievement::Forker.new
     a.description.should == 'User owns at least 5 forks.'
   end
+
+  it "should work for class too" do
+    Achievement::Forker.description.should == 'User owns at least 5 forks.'
+  end
 end
