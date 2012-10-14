@@ -1,7 +1,7 @@
 class Achievement::Railsuser < LeveledAchievement
   Title = 'Rails developer'
   ImagePath = 'achievements/badge_railser.png'
-  Description = 'User developing with Ruby on Rails. Has at least ___ repositories with Ruby on Rails.'
+  Description = 'Has at least ___ repositories with Ruby on Rails.'
   Bubble = {
       left: 21,
       bottom: 141,
@@ -18,7 +18,7 @@ class Achievement::Railsuser < LeveledAchievement
       end
     end
     gemfiles.map! { |gemfile| Gemnasium::Parser.gemfile(gemfile).dependencies }
-    gemfiles.flatten!.map! { |gem| gem.name }
+    gemfiles = gemfiles.flatten.map! { |gem| gem.name }
     gemfiles.count("rails")
   end
 end

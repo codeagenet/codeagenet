@@ -1,7 +1,7 @@
 class Achievement::Starrer < LeveledAchievement
   Title = 'Starrer'
   ImagePath = 'achievements/badge_starrer.png'
-  Description = 'User starred at least ___ repos.'
+  Description = 'Has starred at least ___ repos.'
   Bubble = {
       left: 58,
       bottom: 134,

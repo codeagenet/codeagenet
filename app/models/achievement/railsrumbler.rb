@@ -1,7 +1,7 @@
 class Achievement::Railsrumbler < Achievement
   Title = 'Railsrumbler'
   ImagePath = 'achievements/badge_rumbler.png'
-  Description = 'User participates on Rails Rumble.'
+  Description = 'Participates on Rails Rumble.'
   Bubble = {
       right: 88,
       bottom: 105,
