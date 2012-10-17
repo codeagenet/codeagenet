@@ -8,6 +8,7 @@
 /.bundle
 /.idea
 /config/database.yml
+/config/environments/production.rb
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
