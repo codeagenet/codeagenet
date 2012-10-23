@@ -9,12 +9,12 @@ load 'deploy/unicorn'
 
 #multistaging
 require "capistrano/ext/multistage"
-set :stages, %w(demo)
-set :default_stage, "demo"
+set :stages, %w(production)
+set :default_stage, "production"
 set :keep_releases, 5
 
 set :application, "codeage"
-set :repository,  "git@github.com:railsrumble/r12-team-479.git"
+set :repository,  "git@github.com:codeagenet/codeagenet.git"
 
 require "capistrano-resque"
 
@@ -22,3 +22,9 @@ set :workers, { "realtime" => 2, "realtime,cron" => 1 }
 
 after "deploy:restart", "resque:restart"
 after "deploy:restart", "resque:scheduler:restart"
+
+set :normal_symlinks, %w{
+   config/database.yml
+   tmp
+   config/environments/production.rb
+}

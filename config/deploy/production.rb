@@ -8,11 +8,11 @@ set :rails_env, "production"
 set :branch, "master"
 
 #set server address here
-set :domain, "codeage@198.74.58.236" # Required for ssh deploy
+set :domain, "codeage@codeage.net" # Required for ssh deploy
+set :port, 2228
 
-role :resque_worker, "codeage@198.74.58.236"
-role :resque_scheduler, "codeage@198.74.58.236"
-
+role :resque_worker, domain
+role :resque_scheduler, domain
 
 #Server roles
 role :web, domain
